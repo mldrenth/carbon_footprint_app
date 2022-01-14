@@ -11,14 +11,13 @@ MongoClient.connect("mongodb://localhost:27017", {
   useUnifiedTopology: true,
 })
   .then((client) => {
-    const db = client.db("footprint_db"); // Placeholder name
-    const footprintCollection = db.collection("footprint"); // Placeholder name
-    const footprintRouter = createRouter(footprintCollection); //Placeholder name
-    app.use("/", footprintRouter);  //Set new url at some point + new router name
+    const db = client.db("climateProject_db"); 
+    const climateDataCollection = db.collection("climateData"); 
+    const climateDataRouter = createRouter(climateDataCollection); 
+    app.use("/footprint", climateDataRouter); 
   })
   .catch(console.error);
 
   app.listen(5000, function () {
     console.log(`Listening on port ${ this.address().port }`);  
   });
-
