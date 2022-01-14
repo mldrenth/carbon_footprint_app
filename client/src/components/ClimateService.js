@@ -1,10 +1,10 @@
-const baseURL = "http://localhost:5000/";
+const baseURL = "http://localhost:5000/footprint"; //Better name? 
 
-export const getFootprints = () => {
+export const getData = () => {
   return fetch(baseURL).then((res) => res.json());
 };
 
-export const postFootprint = (booking) => {
+export const postData = (booking) => {
   return fetch(baseURL, {
     method: "POST",
     body: JSON.stringify(booking),
@@ -12,7 +12,7 @@ export const postFootprint = (booking) => {
   }).then((res) => res.json());
 };
 
-export const deleteFootprint = (id) => {
+export const deleteData= (id) => {
   return fetch(baseURL + id, {
     method: "DELETE",
   });

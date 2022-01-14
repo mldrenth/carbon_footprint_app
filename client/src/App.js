@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Header from "./components/Header";
-import FormInputTest from "./components/FormInput";
-
+import DropdownExample from "./components/Dropdown";
 
 function App() {
   return (
     <div className="container">
       <Header />
+      <DropdownExample />
     </div>
   );
 }
