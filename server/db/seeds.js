@@ -46,7 +46,7 @@ db.climateData.insertMany(
             flightKgCO2eOneWay: {
                 domestic: 90,
                 shortHaul: 230,
-                longHaul: 480,
+                longHaul: 480
             }
         }
     ]
