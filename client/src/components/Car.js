@@ -9,21 +9,22 @@ const Car = ({ climateData, handleCarCalculation }) => {
 
     const onMileageChange = (evt) => {
         setYearlyMileage(evt.target.value);
-        // handleCarCalculation(co2PerMile, yearlyMileage);
+        handleCarCalculation(co2PerMile, yearlyMileage);
+        
     }
 
     const onFuelSelected = (evt) => {
         const selectedFuel = evt.target.value;
         setFuelType(evt.target.value);
         setCo2PerMile(climateData[0].drivingKgCO2ePerMile[selectedFuel][carSize]);
-        // handleCarCalculation(co2PerMile, yearlyMileage);
+        handleCarCalculation(co2PerMile, yearlyMileage);
     }
 
     const onSizeSelected = (evt) => {
         const selectedSize = evt.target.value;
         setCarSize(evt.target.value);
         setCo2PerMile(climateData[0].drivingKgCO2ePerMile[fuelType][selectedSize]);
-        // handleCarCalculation(co2PerMile, yearlyMileage);
+        handleCarCalculation(co2PerMile, yearlyMileage);
     }
 
     return(
