@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:5000/footprint"; //Better name? 
+const baseURL = "http://localhost:5000/footprint/"; //Better name? 
 
 export const getData = () => {
   return fetch(baseURL).then((res) => res.json());
