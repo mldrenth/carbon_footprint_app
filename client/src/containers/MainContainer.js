@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { getData } from '../components/ClimateService'
 
 const MainContainer = () => {
-    const {carbonData, setCarbonData} = useState([]) 
+    const [climateData, setClimateData] = useState([])
     const {electricityValue, setElectricityValue} = useState(0)
     const {carValue, setCarValue} = useState(0)
     const {dietValue, setDietValue} = useState(0)
@@ -10,10 +10,10 @@ const MainContainer = () => {
     const {totalValue, setTotalValue} = useState(0)
 
     useEffect(() => {
-        getData().then((allData)=>{
-            setCarbonData(allData)
-        })
-    })
+    getData().then((climateData) => {
+      setClimateData(climateData);
+    });
+  }, []);
 
     return (
         <div id="main-container">
