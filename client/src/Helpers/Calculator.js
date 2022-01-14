@@ -1,10 +1,10 @@
 
-export const calculateElectricityValue = (electricityUsage) => (electricityUsage * 0.309) /1000; 
+export const calculateElectricityValue = (electricityUsage) => ((electricityUsage / 1000) * 0.309); 
 
-export const calculateCarValue = (carType, carMilage) => carType * carMilage;
+export const calculateCarValue = (carType, carMileage) => (carType / 1000 ) * carMileage;
 
-// export const calculateDietValue = (dietType) =>  dietType.value;
+export const calculateDietValue = (dietType) =>  dietType / 1000;
 
-export const calculateFlightValue = (flightType, numberOfFlights) => (flightType * 2) * numberOfFlights;
+export const calculateFlightValue = (flightType, numberOfFlights) => ((flightType / 1000) * 2) * numberOfFlights;
 
 export const calculateTotalValue = (electricityValue, carValue, dietValue, flightValue) => electricityValue + carValue + dietValue + flightValue
