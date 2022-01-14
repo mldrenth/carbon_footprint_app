@@ -3,8 +3,8 @@ export const calculateElectricityValue = (electricityUsage) => (electricityUsage
 
 export const calculateCarValue = (carType, carMilage) => carType * carMilage;
 
-export const calculateDietValue = (dietType) =>  dietType.value;
+// export const calculateDietValue = (dietType) =>  dietType.value;
 
-export const calculateFlightValue = (flighttype, numberOfFlights) => flighttype.value * numberOfFlights;
+export const calculateFlightValue = (flightType, numberOfFlights) => (flightType * 2) * numberOfFlights;
 
 export const calculateTotalValue = (electricityValue, carValue, dietValue, flightValue) => electricityValue + carValue + dietValue + flightValue
