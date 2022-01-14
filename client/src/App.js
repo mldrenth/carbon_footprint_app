@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
-import { getData } from "./components/ClimateService"
-
+import MainContainer from "./containers/MainContainer";
 
 function App() {
-
-  const [climateData, setClimateData] = useState([])
-  useEffect(() => {
-    getData().then((climateData) => {
-      setClimateData(climateData);
-    });
-  }, []);
 
   return (
     <div className="container">
       <Header />
+      <MainContainer />
     </div>
   );
 }
