@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { getData } from '../components/ClimateService'
+import { calculateCarValue } from '../Helpers/Calculator'
+import FormContainer from './FormContainer'
+
 
 const MainContainer = () => {
     const [climateData, setClimateData] = useState([])
@@ -15,9 +18,14 @@ const MainContainer = () => {
     });
   }, []);
 
+  const handleCarCalculation = (carType, carMileage) => {
+        const newCarValue = calculateCarValue(carType, carMileage)
+        setCarValue(newCarValue)
+  }
+
     return (
         <div id="main-container">
-            <p> This will contain stuff</p>
+            <FormContainer handleCarCalculation={handleCarCalculation} climateData={climateData}/>
         </div>
         
     )
