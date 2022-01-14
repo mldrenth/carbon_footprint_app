@@ -1,18 +1,30 @@
-const Car = () => {
+import { useState } from 'react';
+
+const Car = ({ climateData, handleCarCalculation }) => {
+
+    const [co2PerMile, setCo2PerMile] = useState(0);
+    const [yearlyMileage, setYearlyMileage] = useState(7800);
 
     const onChange = (evt) => {
-        //will call a function which will be passed down
-        //function(evt.target.value)
+        setYearlyMileage(evt.target.value)
+    }
+
+    const onSelected = (evt) => {
+        const carType = evt.target.value
+        setCo2PerMile(climateData[0].drivingKgCO2ePerMile[carType])
     }
 
     return(
         <div>
             <h3>How many miles do you drive per year?</h3>
             <p>The average UK family drives 7800 miles per year</p>
-            <p>Could add dropdown for fuel type and size/efficiency here</p>
-            <label for="milesPerYear">X (from state) miles per year:</label>
+            <select onChange={onSelected}>
+                <option value={0}></option>
+                <option value={'averageUKFamilyCar'}>average car</option>
+            </select>
+            <label htmlFor="milesPerYear">X (from state) miles per year:</label>
             <br/>
-            <input type="number" value="7800" onChange={onChange}/>
+            <input type="number" value={yearlyMileage} onChange={onChange}/>
         </div>
     );
 };
