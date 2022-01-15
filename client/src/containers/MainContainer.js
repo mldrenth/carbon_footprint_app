@@ -6,11 +6,11 @@ import FormContainer from './FormContainer'
 
 const MainContainer = () => {
     const [climateData, setClimateData] = useState([])
-    const { electricityValue, setElectricityValue } = useState(0)
-    const { carValue, setCarValue } = useState(0)
-    const { dietValue, setDietValue } = useState(0)
-    const { flyingValue, setFlyingValue } = useState(0)
-    const { totalValue, setTotalValue } = useState(0)
+    const [electricityValue, setElectricityValue] = useState(0)
+    const [carValue, setCarValue ] = useState(0)
+    const [dietValue, setDietValue] = useState(0)
+    const [flyingValue, setFlyingValue] = useState(0)
+    const [totalValue, setTotalValue] = useState(0)
 
     useEffect(() => {
         getData().then((climateData) => {
@@ -26,7 +26,9 @@ const MainContainer = () => {
     const handleCarCalculation = (carType, carMileage) => {
         const newCarValue = calculateCarValue(carType, carMileage)
         setCarValue(newCarValue)
+        console.log(carValue)
     }
+    
 
     const handleDietCalculation = (dietType) => {
         setDietValue(dietType)
