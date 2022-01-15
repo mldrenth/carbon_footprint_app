@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getData } from '../components/ClimateService'
-import { calculateCarValue, calculateElectricityValue, calculateFlightValue, calculateTotalValue } from '../Helpers/Calculator'
+import { calculateCarValue, calculateDietValue, calculateElectricityValue, calculateFlightValue, calculateTotalValue } from '../Helpers/Calculator'
 import FormContainer from './FormContainer'
 import CalculatorDisplay from '../components/CalculatorDisplay'
 import './MainContainer.css'
@@ -37,7 +37,8 @@ const MainContainer = () => {
 
 
     const handleDietCalculation = (dietType) => {
-        setDietValue(dietType)
+        const newDietValue = calculateDietValue(dietType)
+        setDietValue(newDietValue)
     }
 
     const handleFlyingCalculation = (flightType, numberOfFlights) => {

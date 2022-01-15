@@ -1,9 +1,9 @@
 import Car from '../components/Car';
 import Electricity from '../components/Electricity';
 import { useEffect, useState } from 'react';
-import DietForm from '../components/Dietform'
+import DietForm from '../components/DietForm'
 
-const FormContainer = ({ handleCarCalculation, climateData, handleDietCalculation }) => {
+const FormContainer = ({ handleCarCalculation, climateData, handleDietCalculation, handleElectricityCalculation }) => {
 
 
     // const [carData, setCarData] = useState({});
