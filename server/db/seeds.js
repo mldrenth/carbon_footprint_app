@@ -24,7 +24,7 @@ db.climateData.insertMany(
             }
         },
         {
-            dietTonnesCO2ePerYear: {
+            diet: { //KgCO2ePerYear
                 vegan: 1056,
                 vegetarian: 1392,
                 lowMeat: 1706,
