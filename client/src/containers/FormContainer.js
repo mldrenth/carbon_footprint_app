@@ -1,8 +1,10 @@
 import Car from '../components/Car';
 import Electricity from '../components/Electricity';
 import { useEffect, useState } from 'react';
+import DietForm from '../components/Dietform'
 
-const FormContainer = ({handleElectricityCalculation, handleCarCalculation, climateData }) => {
+const FormContainer = ({ handleCarCalculation, climateData, handleDietCalculation }) => {
+
 
     // const [carData, setCarData] = useState({});
     //create states for other data types here
@@ -22,6 +24,7 @@ const FormContainer = ({handleElectricityCalculation, handleCarCalculation, clim
             handleCarCalculation={handleCarCalculation}
             climateData={climateData}
             />
+            <DietForm climateData={climateData} handleDietCalculation={handleDietCalculation} />
         </div>
     );
 };
