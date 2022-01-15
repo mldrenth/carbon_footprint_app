@@ -47,6 +47,7 @@ db.climateData.insertMany(
                 domestic: 90,
                 shortHaul: 230,
                 longHaul: 480
+                
             }
         }
     ]
