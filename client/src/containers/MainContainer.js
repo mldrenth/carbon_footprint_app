@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { getData } from '../components/ClimateService'
 import { calculateCarValue, calculateElectricityValue, calculateFlightValue, calculateTotalValue } from '../Helpers/Calculator'
 import FormContainer from './FormContainer'
+import CalculatorDisplay from '../components/CalculatorDisplay'
+import './MainContainer.css'
 
 
 const MainContainer = () => {
@@ -53,6 +55,7 @@ const MainContainer = () => {
             handleFlyingCalculation={handleFlyingCalculation}
             handleTotalCalculation={handleTotalCalculation}
             climateData={climateData} />
+        <CalculatorDisplay/>
         </div>
 
     )
