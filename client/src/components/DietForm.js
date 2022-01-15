@@ -61,6 +61,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
       />
       <label for="vegan">Vegan</label>
     </form>
+    
   );
 };
 
