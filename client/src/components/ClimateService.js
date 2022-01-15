@@ -1,7 +1,11 @@
 const baseURL = "http://localhost:5000/footprint/"; //Better name? 
 
 export const getData = () => {
-  return fetch(baseURL).then((res) => res.json());
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(fetch(baseURL).then((res) => res.json())) //Testing Promise-resolve to see if fixes async data load issue in components.
+    },1500)
+  })
 };
 
 export const postData = (booking) => {
