@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { getData } from '../components/ClimateService'
 import { calculateCarValue, calculateElectricityValue, calculateFlightValue, calculateTotalValue } from '../Helpers/Calculator'
 import FormContainer from './FormContainer'
+import CalculatorDisplay from '../components/CalculatorDisplay'
+import './MainContainer.css'
 
 
 const MainContainer = () => {
     const [climateData, setClimateData] = useState([])
     const [electricityValue, setElectricityValue] = useState(0)
-    const [carValue, setCarValue ] = useState(0)
+    const [carValue, setCarValue] = useState(0)
     const [dietValue, setDietValue] = useState(0)
     const [flyingValue, setFlyingValue] = useState(0)
     const [totalValue, setTotalValue] = useState(0)
@@ -17,6 +19,10 @@ const MainContainer = () => {
             setClimateData(climateData);
         });
     }, []);
+
+    useEffect(() => {
+        handleTotalCalculation()
+    }, [electricityValue, carValue, dietValue, flyingValue])
 
     const handleElectricityCalculation = (electricityUsage) => {
         const newElectricityValue = calculateElectricityValue(electricityUsage)
@@ -28,7 +34,7 @@ const MainContainer = () => {
         setCarValue(newCarValue)
         console.log(carValue)
     }
-    
+
 
     const handleDietCalculation = (dietType) => {
         setDietValue(dietType)
@@ -46,13 +52,19 @@ const MainContainer = () => {
 
     return (
         <div id="main-container">
-            <FormContainer 
-            handleElectricityCalculation={handleElectricityCalculation}
-            handleCarCalculation={handleCarCalculation} 
-            handleDietCalculation={handleDietCalculation}
-            handleFlyingCalculation={handleFlyingCalculation}
-            handleTotalCalculation={handleTotalCalculation}
-            climateData={climateData} />
+            <FormContainer
+                handleElectricityCalculation={handleElectricityCalculation}
+                handleCarCalculation={handleCarCalculation}
+                handleDietCalculation={handleDietCalculation}
+                handleFlyingCalculation={handleFlyingCalculation}
+                handleTotalCalculation={handleTotalCalculation}
+                climateData={climateData} />
+            <CalculatorDisplay
+                electricityValue={electricityValue}
+                carValue={carValue}
+                dietValue={dietValue}
+                flyingValue={flyingValue}
+                totalValue={totalValue} />
         </div>
 
     )
