@@ -7,7 +7,7 @@ const FootprintChart = ({ electricityValue, carValue, dietValue, flyingValue }) 
 
     const options = {
         title: {
-            text: 'My chart'
+            text: ''
         },
         chart: {
             type: 'pie',
@@ -23,6 +23,7 @@ const FootprintChart = ({ electricityValue, carValue, dietValue, flyingValue }) 
                 fontSize: '8px'
             }
         },
+        
 
         series: [{
             data: [{
