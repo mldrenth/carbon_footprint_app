@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 const Electricity = ({handleElectricityCalculation, climateData}) => {
-    const [energyUsage, setEnergyUsage] = useState(0)
+    const [energyUsage, setEnergyUsage] = useState(4500)
 
     useEffect(() => {
         handleElectricityCalculation(energyUsage)
@@ -15,7 +15,7 @@ const Electricity = ({handleElectricityCalculation, climateData}) => {
         <>
          <h3>Electricity</h3>
          <p> How much energy do you use per year?</p>
-         <input onChange={onChange} type="text"></input>
+         <input onChange={onChange} type="text" placeholder='4500'></input>
          <span>kWh</span>
         </>
     )
