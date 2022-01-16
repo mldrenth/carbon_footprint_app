@@ -43,10 +43,10 @@ db.climateData.insertMany(
             }
         },
         {
-            flightKgCO2eOneWay: {
-                domestic: 90,
-                shortHaul: 230,
-                longHaul: 480
+            flights: { //KgCO2e
+                domestic: 180,
+                shortHaul: 260,
+                longHaul: 960
             }
         }
     ]
