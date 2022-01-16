@@ -15,7 +15,7 @@ const Electricity = ({ handleElectricityCalculation, climateData }) => {
     <>
       <h3>Electricity</h3>
       <p> How much energy do you use per year?</p>
-      <input onChange={onChange} type="number" min={0} step={100} placeholder="4500"></input>
+      <input id="electricity-input" onChange={onChange} type="number" min={0} step={100} placeholder="4500"></input>
       <span>kWh</span>
     </>
   );
