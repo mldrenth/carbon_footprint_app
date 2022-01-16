@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:5000/footprint/"; //Better name? 
+const baseURL = "http://localhost:5000/footprint/"; //Better name?
 
 export const getData = () => {
   return fetch(baseURL).then((res) => res.json());
@@ -12,7 +12,7 @@ export const postData = (booking) => {
   }).then((res) => res.json());
 };
 
-export const deleteData= (id) => {
+export const deleteData = (id) => {
   return fetch(baseURL + id, {
     method: "DELETE",
   });
