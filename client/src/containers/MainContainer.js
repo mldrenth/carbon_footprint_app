@@ -1,79 +1,74 @@
-import React, { useState, useEffect } from "react";
-import { getData } from "../components/ClimateService";
-import {
-  calculateCarValue,
-  calculateDietValue,
-  calculateElectricityValue,
-  calculateFlightValue,
-  calculateTotalValue,
-} from "../Helpers/Calculator";
-import FormContainer from "./FormContainer";
-import CalculatorDisplay from "../components/CalculatorDisplay";
-import "./MainContainer.css";
+import React, { useState, useEffect } from 'react'
+import { getData } from '../components/ClimateService'
+import { calculateCarValue, calculateDietValue, calculateElectricityValue, calculateFlightValue, calculateTotalValue } from '../Helpers/Calculator'
+import FormContainer from './FormContainer'
+import CalculatorDisplay from '../components/CalculatorDisplay'
+import './MainContainer.css'
+
 
 const MainContainer = () => {
-  const [climateData, setClimateData] = useState([]);
-  const [electricityValue, setElectricityValue] = useState(0);
-  const [carValue, setCarValue] = useState(0);
-  const [dietValue, setDietValue] = useState(0);
-  const [flyingValue, setFlyingValue] = useState(0);
-  const [totalValue, setTotalValue] = useState(0);
+    const [climateData, setClimateData] = useState([])
+    const [electricityValue, setElectricityValue] = useState(0)
+    const [carValue, setCarValue] = useState(0)
+    const [dietValue, setDietValue] = useState(0)
+    const [flyingValue, setFlyingValue] = useState(0)
+    const [totalValue, setTotalValue] = useState(0)
 
-  useEffect(() => {
-    getData().then((climateData) => {
-      setClimateData(climateData);
-    });
-  }, []);
+    useEffect(() => {
+        getData().then((climateData) => {
+            setClimateData(climateData);
+        });
+    }, []);
 
-  useEffect(() => {
-    handleTotalCalculation();
-  }, [electricityValue, carValue, dietValue, flyingValue]);
+    useEffect(() => {
+        handleTotalCalculation()
+    }, [electricityValue, carValue, dietValue, flyingValue])
 
-  const handleElectricityCalculation = (electricityUsage) => {
-    const newElectricityValue = calculateElectricityValue(electricityUsage);
-    setElectricityValue(newElectricityValue);
-  };
+    const handleElectricityCalculation = (electricityUsage) => {
+        const newElectricityValue = calculateElectricityValue(electricityUsage)
+        setElectricityValue(newElectricityValue)
+    }
 
-  const handleCarCalculation = (carType, carMileage) => {
-    const newCarValue = calculateCarValue(carType, carMileage);
-    setCarValue(newCarValue);
-    console.log(carValue);
-  };
+    const handleCarCalculation = (carType, carMileage) => {
+        const newCarValue = calculateCarValue(carType, carMileage)
+        setCarValue(newCarValue)
+        console.log(carValue)
+    }
 
-  const handleDietCalculation = (dietType) => {
-    const newDietValue = calculateDietValue(dietType);
-    setDietValue(newDietValue);
-  };
 
-  const handleFlightCalculation = (numDomestic, numShortHaul, numLongHaul, co2Domestic, co2ShortHaul, co2LongHaul) => {
-    const newFlyingValue = calculateFlightValue(numDomestic, numShortHaul, numLongHaul, co2Domestic, co2ShortHaul, co2LongHaul);
-    setFlyingValue(newFlyingValue);
-  };
+    const handleDietCalculation = (dietType) => {
+        const newDietValue = calculateDietValue(dietType)
+        setDietValue(newDietValue)
+    }
 
-  const handleTotalCalculation = () => {
-    const newTotal = electricityValue + carValue + dietValue + flyingValue;
-    setTotalValue(newTotal);
-  };
+    const handleFlyingCalculation = (flightType, numberOfFlights) => {
+        const newFlyingValue = calculateFlightValue(flightType, numberOfFlights)
+        setFlyingValue(newFlyingValue)
+    }
 
-  return (
-    <div id="main-container">
-      <FormContainer
-        handleElectricityCalculation={handleElectricityCalculation}
-        handleCarCalculation={handleCarCalculation}
-        handleDietCalculation={handleDietCalculation}
-        handleFlightCalculation={handleFlightCalculation}
-        handleTotalCalculation={handleTotalCalculation}
-        climateData={climateData}
-      />
-      <CalculatorDisplay
-        electricityValue={electricityValue}
-        carValue={carValue}
-        dietValue={dietValue}
-        flyingValue={flyingValue}
-        totalValue={totalValue}
-      />
-    </div>
-  );
-};
+    const handleTotalCalculation = () => {
+        const newTotal = electricityValue + carValue + dietValue + flyingValue
+        setTotalValue(newTotal)
+    }
 
-export default MainContainer;
+    return (
+        <div id="main-container">
+            <FormContainer
+                handleElectricityCalculation={handleElectricityCalculation}
+                handleCarCalculation={handleCarCalculation}
+                handleDietCalculation={handleDietCalculation}
+                handleFlyingCalculation={handleFlyingCalculation}
+                handleTotalCalculation={handleTotalCalculation}
+                climateData={climateData} />
+            <CalculatorDisplay
+                electricityValue={electricityValue}
+                carValue={carValue}
+                dietValue={dietValue}
+                flyingValue={flyingValue}
+                totalValue={totalValue} />
+        </div>
+
+    )
+}
+
+export default MainContainer
