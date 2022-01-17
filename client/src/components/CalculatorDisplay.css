@@ -1,0 +1,14 @@
+#calculator-display-container > h2 {
+    color: #6B9080;
+}
+
+#calculator-display-container > p {
+ display: inline;
+}
+
+#calculator-display-container > p > span {
+    color: #6B9080;
+    font-style: bold;
+    
+}
+

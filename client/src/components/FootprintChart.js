@@ -13,6 +13,7 @@ const FootprintChart = ({
     },
     chart: {
       type: "pie",
+      backgroundColor: null,
 
       width: 550,
       marginRight: 35,
