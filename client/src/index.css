@@ -28,4 +28,5 @@ body {
   text-align: center;
   margin-bottom: 20px;
   color: #6b9080;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }

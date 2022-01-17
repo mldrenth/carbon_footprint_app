@@ -13,6 +13,7 @@
 
 #energy-header {
   color: #6b9080;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 #energy-q {
 }
@@ -30,6 +31,7 @@
 
 #diet-header {
   color: #6b9080;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 #high-meat {
 }
@@ -50,6 +52,7 @@
 
 #car-header {
   color: #6b9080;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 #car-average {
@@ -74,6 +77,7 @@
 }
 
 #flight-domestic {
+    
 }
 
 #flight-longHaul {
