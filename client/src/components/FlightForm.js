@@ -39,11 +39,11 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
   return (
     <div>
       <label>Domestic Flights </label>
-      <input type="number" value={numDomestic} onChange={onDomesticChange} min={0}/>
+      <input id="domestic" type="number" value={numDomestic} onChange={onDomesticChange} min={0}/>
       <label>Short Haul Flights </label>
-      <input type="number" value={numShortHaul} min={0} onChange={onShortChange} />
+      <input  id="shortHaul" type="number" value={numShortHaul} min={0} onChange={onShortChange} />
       <label>Long Haul Flights </label>
-      <input min={0} type="number" value={numLongHaul} onChange={onLongChange} />
+      <input id="longHaul" min={0} type="number" value={numLongHaul} onChange={onLongChange} />
     </div>
   );
 };
