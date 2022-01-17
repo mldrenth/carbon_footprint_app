@@ -15,16 +15,15 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
 
   return (
     <form id="diet-form" onChange={onDietSelected}>
+      <h2 id="diet-header">Diet</h2>
       <input
-        class="dietHigh"
         type="radio"
         name="dietType"
         id="high-meat"
-        value="highMeat" 
+        value="highMeat"
         required
       />
-      <label for="highMeat">High 100g</label>
-
+      <label htmlFor="high-Meat">High 100g</label>
       <input
         class="dietRadio"
         type="radio"
@@ -33,7 +32,8 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         value="mediumMeat"
         required
       />
-      <label for="medium-Meat">Medium 30-60g</label>
+      <label htmlFor="medium-Meat">Medium 30-60g</label>
+      <br />
 
       <input
         class="dietRadio"
@@ -43,7 +43,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         value="lowMeat"
         required
       />
-      <label for="low-meat">Low 0-30g</label>
+      <label htmlFor="low-meat">Low 0-30g</label>
 
       <input
         class="dietRadio"
@@ -53,7 +53,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         value="vegetarian"
         required
       />
-      <label for="vegetarian">Vegetarian</label>
+      <label htmlFor="vegetarian">Vegetarian</label>
 
       <input
         class="dietRadio"
@@ -64,7 +64,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         required
         defaultChecked="true"
       />
-      <label for="vegan">Vegan</label>
+      <label htmlFor="vegan">Vegan</label>
     </form>
   );
 };

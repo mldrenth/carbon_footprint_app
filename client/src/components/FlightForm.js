@@ -17,7 +17,14 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
       co2ShortHaul,
       co2LongHaul
     );
-  }, [co2Domestic, co2ShortHaul, co2LongHaul, numDomestic, numShortHaul, numLongHaul]);
+  }, [
+    co2Domestic,
+    co2ShortHaul,
+    co2LongHaul,
+    numDomestic,
+    numShortHaul,
+    numLongHaul,
+  ]);
 
   const onDomesticChange = (event) => {
     setNumDomestic(event.target.value);
@@ -37,14 +44,38 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
     console.log(co2LongHaul);
   };
   return (
-    <div>
-      <label>Domestic Flights </label>
-      <input id="domestic" type="number" value={numDomestic} onChange={onDomesticChange} min={0}/>
-      <label>Short Haul Flights </label>
-      <input  id="shortHaul" type="number" value={numShortHaul} min={0} onChange={onShortChange} />
-      <label>Long Haul Flights </label>
-      <input id="longHaul" min={0} type="number" value={numLongHaul} onChange={onLongChange} />
-    </div>
+    <form id="flight-form">
+      <h4 id="flight-header">How often fo you fly?</h4>
+      <label htmlFor="domestic">Domestic: </label>
+
+      <input
+        id="domestic"
+        type="number"
+        value={numDomestic}
+        onChange={onDomesticChange}
+        min={0}
+      />
+      <br />
+      <label htmlFor="shortHaul">Short Haul: </label>
+
+      <input
+        id="shortHaul"
+        type="number"
+        value={numShortHaul}
+        min={0}
+        onChange={onShortChange}
+      />
+      <br />
+      <label htmlFor="longHaul">Long Haul: </label>
+
+      <input
+        id="longHaul"
+        min={0}
+        type="number"
+        value={numLongHaul}
+        onChange={onLongChange}
+      />
+    </form>
   );
 };
 
