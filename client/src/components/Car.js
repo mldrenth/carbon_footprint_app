@@ -27,17 +27,17 @@ const Car = ({ climateData, handleCarCalculation }) => {
   };
 
   return (
-    <div>
-      <h3>How many miles do you drive per year?</h3>
-      <p>The average UK family drives 7800 miles per year</p>
-      <label>Select your fuel type </label>
-      <select onChange={onFuelSelected}>
+    <div id="car-form">
+      <h3 id="car-header">Miles driven per year?</h3>
+      <p id='car-average'>The average UK family drives 7800 miles per year</p>
+      <label htmlFor="fuel-type">Select your fuel type </label>
+      <select id='fuel-type' onChange={onFuelSelected}>
         <option value="petrol">Petrol (standard)</option>
         <option value="diesel">Diesel</option>
       </select>
       <br />
-      <label>Select your car size </label>
-      <select onChange={onSizeSelected}>
+      <label htmlFor="car-size">Select car size </label>
+      <select id='car-size'onChange={onSizeSelected}>
         <option value="medium">Average UK Family Car</option>
         <option value="small">Small</option>
         <option value="medium">Medium</option>
@@ -45,7 +45,7 @@ const Car = ({ climateData, handleCarCalculation }) => {
       </select>
       <br />
       <label htmlFor="milesPerYear">Enter your yearly mileage </label>
-      <input type="number" value={yearlyMileage} onChange={onMileageChange} />
+      <input id='milesPerYear' type="number" value={yearlyMileage} onChange={onMileageChange} />
       <p>{co2PerMile}</p>
     </div>
   );

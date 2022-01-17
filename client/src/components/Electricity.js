@@ -12,12 +12,12 @@ const Electricity = ({ handleElectricityCalculation, climateData }) => {
     };
 
     return (
-        <>
-            <h3>Electricity</h3>
-            <p> How much energy do you use per year?</p>
-            <input id="electricity-input" onChange={onChange} type="number" min={0} step={100} placeholder="4500" ></input>
-            <span> kWh </span>
-        </>
+        <div id="energy-form">
+            <h3 id="energy-header">Electricity</h3>
+            <p id="energy-q"> How much energy do you use per year?</p>
+            <input id="energy-input" onChange={onChange} type="number" min={0} step={100} placeholder="4500" ></input>
+            <span id="energy-kwh"> kWh </span>
+            </div>
     );
 };
 
