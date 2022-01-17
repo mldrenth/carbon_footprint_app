@@ -3,6 +3,7 @@ import Car from "../components/Car";
 import Electricity from "../components/Electricity";
 import DietForm from "../components/DietForm";
 import FlightForm from "../components/FlightForm";
+import "./FormContainer.css";
 
 const FormContainer = ({
   handleCarCalculation,
@@ -12,18 +13,18 @@ const FormContainer = ({
   handleFlightCalculation,
 }) => {
   return (
-    <div>
+    <div id="forms-container">
       <Electricity
         handleElectricityCalculation={handleElectricityCalculation}
-        climateData={climateData}
-      />
-      <Car
-        handleCarCalculation={handleCarCalculation}
         climateData={climateData}
       />
       <DietForm
         climateData={climateData}
         handleDietCalculation={handleDietCalculation}
+      />
+      <Car
+        handleCarCalculation={handleCarCalculation}
+        climateData={climateData}
       />
       <FlightForm
         climateData={climateData}

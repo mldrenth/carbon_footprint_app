@@ -1,0 +1,83 @@
+/* ---Forms Container--- */
+#forms-container {
+  background: #f6fff8;
+  margin: 5px;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+/* ---Energy info--- */
+#energy-form {
+  padding: 5px;
+}
+
+#energy-header {
+  color: #6b9080;
+}
+#energy-q {
+}
+
+#energy-input {
+}
+#energy-kwh {
+}
+
+/* ---Diet info--- */
+
+#diet-form {
+  padding: 5px;
+}
+
+#diet-header {
+  color: #6b9080;
+}
+#high-meat {
+}
+#medium-meat {
+}
+#low-meat {
+}
+#vegetarian {
+}
+#vegan {
+}
+
+/* ---Transport info--- */
+
+#car-form {
+  padding: 5px;
+}
+
+#car-header {
+  color: #6b9080;
+}
+
+#car-average {
+}
+
+#fuel-type {
+}
+
+#car-size {
+}
+
+#milesPerYear {
+}
+
+/* Flights */
+
+#flight-form {
+}
+
+#flight-header {
+  color: #6b9080;
+}
+
+#flight-domestic {
+}
+
+#flight-longHaul {
+}
+
+#flight-shortHaul {
+}
