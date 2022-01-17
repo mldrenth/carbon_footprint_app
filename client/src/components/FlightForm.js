@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 const FlightForm = ({ climateData, handleFlightCalculation }) => {
   const [numDomestic, setNumDomestic] = useState(0);
   const [numShortHaul, setNumShortHaul] = useState(0);
@@ -40,6 +41,9 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
     setNumLongHaul(event.target.value);
     setCo2LongHaul(climateData[4].flights["longHaul"]);
   };
+
+
+
   return (
     <form id="flight-form">
       <h4 id="flight-header">How often fo you fly?</h4>

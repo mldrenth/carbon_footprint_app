@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const Car = ({ climateData, handleCarCalculation }) => {
+
+const CarForm = ({ climateData, handleCarCalculation }) => {
   const [co2PerMile, setCo2PerMile] = useState(0.295);
   const [yearlyMileage, setYearlyMileage] = useState(7800);
   const [fuelType, setFuelType] = useState("petrol");
@@ -69,4 +70,4 @@ const Car = ({ climateData, handleCarCalculation }) => {
   );
 };
 
-export default Car;
+export default CarForm;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Slider from '@mui/material/Slider'
 
 const DietForm = ({ climateData, handleDietCalculation }) => {
   const [dietType, setDietType] = useState("vegan");
@@ -13,59 +14,62 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
     setSelectedDiet(climateData[1].diet[event.target.value]);
   };
 
+  const dietPick = [
+    {
+      value: "7",
+      label: '7',
+    },
+    {
+      value: "6",
+      label: '6'
+    },
+    {
+      value: "5",
+      label: '5',
+    },
+    {
+      value: "4",
+      label: '4',
+    },
+    {
+      value: "3",
+      label: '3'
+    },
+    {
+      value: "2",
+      label: "2",
+    },
+    {
+      value: "1",
+      label: "1",
+    },
+    {
+      value: "0",
+      label: "0",
+    }
+  ];
+
+
+
   return (
     <form id="diet-form" onChange={onDietSelected}>
       <h2 id="diet-header">Diet</h2>
-      <input
-        type="radio"
-        name="dietType"
-        id="high-meat"
-        value="highMeat"
-        required
-      />
-      <label htmlFor="high-Meat">High 100g</label>
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="medium-meat"
-        value="mediumMeat"
-        required
-      />
-      <label htmlFor="medium-Meat">Medium 30-60g</label>
-      <br />
+      <Slider
+        size="small"
+        valueLabelDisplay="auto"
+        marks={dietPick}
+        id="energy-input"
+        onChange={onDietSelected}
+        type="range"
+        color="success"
+        min={0}
+        max={7}
+        step={1}
+        defaultValue={0}
+      ></Slider>
+      </form>
 
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="low-meat"
-        value="lowMeat"
-        required
-      />
-      <label htmlFor="low-meat">Low 0-30g</label>
 
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="vegetarian"
-        value="vegetarian"
-        required
-      />
-      <label htmlFor="vegetarian">Vegetarian</label>
-
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="vegan"
-        value="vegan"
-        required
-        defaultChecked="true"
-      />
-      <label htmlFor="vegan">Vegan</label>
-    </form>
   );
 };
 

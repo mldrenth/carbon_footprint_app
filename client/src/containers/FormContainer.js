@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Car from "../components/Car";
+import CarForm from "../components/CarForm";
 import Electricity from "../components/Electricity";
 import DietForm from "../components/DietForm";
 import FlightForm from "../components/FlightForm";
@@ -22,7 +22,7 @@ const FormContainer = ({
         climateData={climateData}
         handleDietCalculation={handleDietCalculation}
       />
-      <Car
+      <CarForm
         handleCarCalculation={handleCarCalculation}
         climateData={climateData}
       />
