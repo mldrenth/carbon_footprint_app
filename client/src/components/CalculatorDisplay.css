@@ -6,8 +6,20 @@
  display: inline;
 }
 
-#calculator-display-container > p > span {
+#total-value-low {
     color: #6B9080;
+    font-style: bold;
+    
+}
+
+#total-value-average {
+    color: #8B7849;
+    font-style: bold;
+    
+}
+
+#total-value-high {
+    color: #8C504A;
     font-style: bold;
     
 }
