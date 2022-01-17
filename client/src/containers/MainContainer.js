@@ -34,10 +34,9 @@ const MainContainer = () => {
     setElectricityValue(newElectricityValue);
   };
 
-  const handleCarCalculation = (carType, carMileage) => {
-    const newCarValue = calculateCarValue(carType, carMileage);
+  const handleCarCalculation = (carType, carMileage, carNumber) => {
+    const newCarValue = calculateCarValue(carType, carMileage, carNumber);
     setCarValue(newCarValue);
-    console.log(carValue);
   };
 
   const handleDietCalculation = (dietType) => {

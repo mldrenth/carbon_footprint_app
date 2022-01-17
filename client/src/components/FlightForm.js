@@ -29,19 +29,16 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
   const onDomesticChange = (event) => {
     setNumDomestic(event.target.value);
     setCo2Domestic(climateData[4].flights["domestic"]);
-    console.log(co2Domestic);
   };
 
   const onShortChange = (event) => {
     setNumShortHaul(event.target.value);
     setCo2ShortHaul(climateData[4].flights["shortHaul"]);
-    console.log(co2ShortHaul);
   };
 
   const onLongChange = (event) => {
     setNumLongHaul(event.target.value);
     setCo2LongHaul(climateData[4].flights["longHaul"]);
-    console.log(co2LongHaul);
   };
   return (
     <form id="flight-form">
