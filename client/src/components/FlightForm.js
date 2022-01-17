@@ -37,14 +37,15 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
     console.log(co2LongHaul);
   };
   return (
-    <div>
-      <label>Domestic Flights </label>
-      <input id="domestic" type="number" value={numDomestic} onChange={onDomesticChange} min={0}/>
-      <label>Short Haul Flights </label>
-      <input  id="shortHaul" type="number" value={numShortHaul} min={0} onChange={onShortChange} />
-      <label>Long Haul Flights </label>
-      <input id="longHaul" min={0} type="number" value={numLongHaul} onChange={onLongChange} />
-    </div>
+    <form id="flight-form">
+      <h3 id="flight-header" >How often fo you fly?</h3>
+      <label htmlFor="domestic">Domestic Flights </label>
+      <input id="domestic"  type="number" value={numDomestic} onChange={onDomesticChange} min={0}/>
+      <label htmlFor="shortHaul">Short Haul Flights </label>
+      <input id="shortHaul"  type="number" value={numShortHaul} min={0} onChange={onShortChange} />
+      <label htmlFor="longHaul">Long Haul Flights </label>
+      <input id="longHaul"  min={0} type="number" value={numLongHaul} onChange={onLongChange} />
+    </form>
   );
 };
 
