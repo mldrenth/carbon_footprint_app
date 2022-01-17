@@ -16,10 +16,10 @@ it("Has value of Vegan on load", () => {
 
 it("USer can select value", () => {
     // cy.get('[type="radio"]').first().check() // select by type
-    const dietInput = cy.get('[type="radio"]').first().check(); 
+    const dietInput = cy.get('[type="radio"].dietHigh').first().check(); 
     dietInput.should('have.value', 'highMeat')
     
-} )  //DOes not return right value
+} )  //Does not return right value
 
 
 

@@ -16,7 +16,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
   return (
     <form id="diet-form" onChange={onDietSelected}>
       <input
-        class="diethigh"
+        class="dietHigh"
         type="radio"
         name="dietType"
         id="high-meat"
