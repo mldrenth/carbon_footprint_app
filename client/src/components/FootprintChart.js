@@ -11,8 +11,10 @@ const FootprintChart = ({
     title: {
       text: "",
     },
+    colors: ['#6b9080', '#708D7D', '#a4c3b2', '#CCE3DE'],
     chart: {
       type: "pie",
+      backgroundColor: null,
 
       width: 550,
       marginRight: 35,
