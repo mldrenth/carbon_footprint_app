@@ -16,15 +16,17 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
   return (
     <form id="diet-form" onChange={onDietSelected}>
       <input
+        class="diethigh"
         type="radio"
         name="dietType"
         id="high-meat"
-        value="highMeat" //find a way to use api
+        value="highMeat" 
         required
       />
       <label for="highMeat">High 100g</label>
 
       <input
+        class="dietRadio"
         type="radio"
         name="dietType"
         id="medium-meat"
@@ -34,6 +36,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
       <label for="medium-Meat">Medium 30-60g</label>
 
       <input
+        class="dietRadio"
         type="radio"
         name="dietType"
         id="low-meat"
@@ -43,6 +46,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
       <label for="low-meat">Low 0-30g</label>
 
       <input
+        class="dietRadio"
         type="radio"
         name="dietType"
         id="vegetarian"
@@ -52,6 +56,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
       <label for="vegetarian">Vegetarian</label>
 
       <input
+        class="dietRadio"
         type="radio"
         name="dietType"
         id="vegan"
