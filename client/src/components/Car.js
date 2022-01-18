@@ -3,6 +3,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Slider from '@mui/material/Slider';
 import { Menu } from "@mui/material";
 
 const Car = ({ climateData, handleCarCalculation }) => {
@@ -51,6 +52,21 @@ const Car = ({ climateData, handleCarCalculation }) => {
   //   { console.log(carNumber) }
   // };
 
+  const marks = [
+    {
+      value: 0,
+      label: '0',
+    },
+    {
+      value: 7800,
+      label: 'Average UK Family'
+    },
+    {
+      value: 30000,
+      label: '30000'
+    }
+  ];
+
   return (
     <div id="car-form">
       <h2 id="car-header">Transport</h2>
@@ -93,8 +109,14 @@ const Car = ({ climateData, handleCarCalculation }) => {
         </div>
         <br />
         <label htmlFor="milesPerYear">Yearly mileage </label>
-        <input
-          step={100}
+        <Slider
+        marks={marks}
+        size="small"
+        valueLabelDisplay="auto"
+        color="success"
+          step={500}
+          min={0}
+          max={30000}
           id="milesPerYear"
           type="number"
           value={yearlyMileage}
