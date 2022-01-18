@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { Menu } from "@mui/material";
 
 const Car = ({ climateData, handleCarCalculation }) => {
-  const [co2PerMile, setCo2PerMile] = useState(0.295);
-  const [yearlyMileage, setYearlyMileage] = useState(7800);
-  const [fuelType, setFuelType] = useState("petrol");
-  const [carSize, setCarSize] = useState("medium");
-  const [carNumber, setCarNumber] = useState(0);
+  const [co2PerMile, setCo2PerMile] = useState(0);
+  const [yearlyMileage, setYearlyMileage] = useState(0);
+  const [fuelType, setFuelType] = useState(null);
+  const [carSize, setCarSize] = useState(null);
+  // const [carNumber, setCarNumber] = useState(0);
+  const [hasCar, setHasCar] = useState(false);
 
   useEffect(() => {
-    handleCarCalculation(co2PerMile, yearlyMileage, carNumber);
-  }, [co2PerMile, yearlyMileage, carNumber]);
+    handleCarCalculation(co2PerMile, yearlyMileage);
+  }, [co2PerMile, yearlyMileage, hasCar]);
 
   const onMileageChange = (evt) => {
     setYearlyMileage(evt.target.value);
@@ -27,44 +33,74 @@ const Car = ({ climateData, handleCarCalculation }) => {
     setCo2PerMile(climateData[0].drivingKgCO2ePerMile[fuelType][selectedSize]);
   };
 
-  const onNumSelected = (evt) => {
-    setCarNumber(evt.target.value);
-    {console.log(carNumber)}
-  };
+  const onHasCarSelected = (evt) => {
+    setHasCar(evt.target.value)
+    if (evt.target.value) {
+      setYearlyMileage(7800)
+      setFuelType('petrol')
+      setCarSize('medium')
+      setCo2PerMile(0.29)
+    }
+    else {
+      setYearlyMileage(0)
+    }
+  }
+
+  // const onNumSelected = (evt) => {
+  //   setCarNumber(evt.target.value);
+  //   { console.log(carNumber) }
+  // };
 
   return (
     <div id="car-form">
       <h2 id="car-header">Transport</h2>
-      <label htmlFor="car-number">Number of cars </label>
-      <input
+      <InputLabel htmlFor="car-number"> Do you own a car? </InputLabel>
+      <Select
         id="car-number"
         min={0}
         type="number"
-        value={carNumber}
-        onChange={onNumSelected}
-      />
-      <br/>
-      <label htmlFor="fuel-type">Fuel type </label>
-      <select id="fuel-type" onChange={onFuelSelected}>
-        <option value="petrol">Petrol (standard)</option>
-        <option value="diesel">Diesel</option>
-      </select>
+        value={hasCar}
+        onChange={onHasCarSelected}
+        size="small"
+        color="success"
+      >
+        <MenuItem value={true}>Yes</MenuItem>
+        <MenuItem value={false}>No</MenuItem>
+      </Select>
       <br />
-      <label htmlFor="car-size">Car size </label>
-      <select id="car-size" onChange={onSizeSelected}>
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <br />
-      <label htmlFor="milesPerYear">Yearly mileage </label>
-      <input
-      step={100}
-        id="milesPerYear"
-        type="number"
-        value={yearlyMileage}
-        onChange={onMileageChange}
-      />
+      {hasCar ? <div id="car-questions-div">
+        <div id="car-options">
+          <FormControl fullwidth>
+          <div id="fuel-type-div">
+        <InputLabel htmlFor="fuel-type" color="success">Fuel type </InputLabel>
+        <Select id="fuel-type" onChange={onFuelSelected} value={fuelType} color="success" label="Fuel Type">
+          <MenuItem value="petrol">Petrol (standard)</MenuItem>
+          <MenuItem value="diesel">Diesel</MenuItem>
+        </Select>
+        </div>
+        </FormControl>
+        <FormControl>
+        <div id="car-size-div">
+        <InputLabel htmlFor="car-size" color="success">Car size </InputLabel>
+        <Select id="car-size" onChange={onSizeSelected} value={carSize} color="success" label="Car Size">
+          <MenuItem value="small">Small</MenuItem>
+          <MenuItem value="medium">Medium</MenuItem>
+          <MenuItem value="large">Large</MenuItem>
+        </Select>
+        
+        </div>
+        </FormControl>
+        </div>
+        <br />
+        <label htmlFor="milesPerYear">Yearly mileage </label>
+        <input
+          step={100}
+          id="milesPerYear"
+          type="number"
+          value={yearlyMileage}
+          onChange={onMileageChange}
+        />
+      </div> : null}
     </div>
   );
 };
