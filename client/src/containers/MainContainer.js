@@ -39,8 +39,8 @@ const MainContainer = () => {
     setCarValue(newCarValue);
   };
 
-  const handleDietCalculation = (dietType) => {
-    const newDietValue = calculateDietValue(dietType);
+  const handleDietCalculation = (meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2) => {
+    const newDietValue = calculateDietValue(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
     setDietValue(newDietValue);
   };
 

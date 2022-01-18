@@ -1,64 +1,111 @@
 import { useState, useEffect } from "react";
+import Slider from "@mui/material/Slider";
 
-const DietForm = ({ climateData, handleDietCalculation, dietType, selectedDiet, handleDietSelected }) => {
+const DietForm = ({ climateData, handleDietCalculation, meatServings, dairyServings, vegServings, averageMeatCo2, averageDairyCo2, averageVegCo2, handleMeatSelected, handleDairySelected, handleVegSelected }) => {
+  // const [meatServings, setMeatServings] = useState(0);
+  // const [dairyServings, setDairyServings] = useState(0);
+  // const [vegServings, setVegServings] = useState(0);
+  // const [averageMeatCo2, setAverageMeatCo2] = useState(0);
+  // const [averageDairyCo2, setAverageDairyCo2] = useState(0);
+  // const [averageVegCo2, setAverageVegCo2] = useState(0);
+
+  // useEffect(() => {
+  //   handleDietCalculation(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
+  // }, [meatServings, vegServings, dairyServings]);
+
+  const onMeatSelected = (event) => {
+    handleMeatSelected(event)
+  };
+  const onDairySelected = (event) => {
+    handleDairySelected(event)
+  };
+  const onVegSelected = (event) => {
+    handleVegSelected(event)
   
-
-  const onDietSelected = (event) => {
-    handleDietSelected(event)
   };
 
+  const dietPick = [
+    {
+      value: 14,
+      label: "14",
+    },
+    {
+      value: 12,
+      label: "12",
+    },
+    {
+      value: 10,
+      label: "10",
+    },
+    {
+      value: 8,
+      label: "8",
+    },
+    {
+      value: 6,
+      label: "6",
+    },
+    {
+      value: 4,
+      label: "4",
+    },
+    {
+      value: 2,
+      label: "2",
+    },
+    {
+      value: 0,
+      label: "0",
+    },
+  ];
+
   return (
-    <form id="diet-form" onChange={onDietSelected}>
+    <form id="diet-form">
       <h2 id="diet-header">Diet</h2>
-      <input
-        type="radio"
-        name="dietType"
-        id="high-meat"
-        value="highMeat"
-        required
-      />
-      <label htmlFor="high-Meat">High 100g</label>
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="medium-meat"
-        value="mediumMeat"
-        required
-      />
-      <label htmlFor="medium-Meat">Medium 30-60g</label>
+      <p>Servings per week of meat, fish, eggs</p>
+      <Slider
+        size="small"
+        valueLabelDisplay="auto"
+        marks={dietPick}
+        id="meat-servings"
+        onChange={onMeatSelected}
+        type="range"
+        color="success"
+        min={0}
+        max={14}
+        step={1}
+        defaultValue={meatServings}
+      ></Slider>
       <br />
-
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="low-meat"
-        value="lowMeat"
-        required
-      />
-      <label htmlFor="low-meat">Low 0-30g</label>
-
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="vegetarian"
-        value="vegetarian"
-        required
-      />
-      <label htmlFor="vegetarian">Vegetarian</label>
-
-      <input
-        class="dietRadio"
-        type="radio"
-        name="dietType"
-        id="vegan"
-        value="vegan"
-        required
-        defaultChecked="true"
-      />
-      <label htmlFor="vegan">Vegan</label>
+      <p>Servings per week of dairy</p>
+      <Slider
+        size="small"
+        valueLabelDisplay="auto"
+        marks={dietPick}
+        id="dairy servings"
+        onChange={onDairySelected}
+        type="range"
+        color="success"
+        min={0}
+        max={14}
+        step={1}
+        defaultValue={dairyServings}
+      ></Slider>
+      <br />
+      <p>Servings per week of fruit, vegetables</p>
+      <Slider
+        size="small"
+        valueLabelDisplay="auto"
+        marks={dietPick}
+        id="dairy servings"
+        onChange={onVegSelected}
+        type="range"
+        color="success"
+        min={0}
+        max={14}
+        step={1}
+        defaultValue={vegServings}
+      ></Slider>
     </form>
   );
 };
