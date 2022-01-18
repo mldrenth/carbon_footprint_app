@@ -41,9 +41,25 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
     setNumLongHaul(event.target.value);
     setCo2LongHaul(climateData[4].flights["longHaul"]);
   };
+
+  const marks = [
+    {
+      value: 0,
+      label: '0',
+    },
+    {
+      value: 10,
+      label: '10'
+    },
+    {
+      value: 20,
+      label: '20',
+    }
+  ];
+
   return (
     <form id="flight-form">
-      <h4 id="flight-header">How often fo you fly?</h4>
+      <h4 id="flight-header">How often fo you fly? (includes return)</h4>
       <InputLabel htmlFor="domestic">Domestic: </InputLabel>
 
       <Slider 
@@ -55,6 +71,7 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
         onChange={onDomesticChange}
         min={0}
         max={20}
+        marks={marks}
       />
       <br />
       <InputLabel htmlFor="shortHaul">Short Haul: </InputLabel>
@@ -66,6 +83,7 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
         value={numShortHaul}
         min={0}
         max={20}
+        marks={marks}
         onChange={onShortChange}
       />
       <br />
@@ -78,6 +96,7 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
         id="longHaul"
         min={0}
         max={20}
+        marks={marks}
         value={numLongHaul}
         onChange={onLongChange}
       />
