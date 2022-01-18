@@ -89,7 +89,7 @@ const Car = ({ climateData, handleCarCalculation }) => {
           <FormControl fullwidth>
           <div id="fuel-type-div">
         <InputLabel htmlFor="fuel-type" color="success">Fuel type </InputLabel>
-        <Select id="fuel-type" onChange={onFuelSelected} value={fuelType} color="success" label="Fuel Type">
+        <Select size="small" id="fuel-type" onChange={onFuelSelected} value={fuelType} color="success" label="Fuel Type">
           <MenuItem value="petrol">Petrol (standard)</MenuItem>
           <MenuItem value="diesel">Diesel</MenuItem>
         </Select>
@@ -98,7 +98,7 @@ const Car = ({ climateData, handleCarCalculation }) => {
         <FormControl>
         <div id="car-size-div">
         <InputLabel htmlFor="car-size" color="success">Car size </InputLabel>
-        <Select id="car-size" onChange={onSizeSelected} value={carSize} color="success" label="Car Size">
+        <Select size="small" id="car-size" onChange={onSizeSelected} value={carSize} color="success" label="Car Size">
           <MenuItem value="small">Small</MenuItem>
           <MenuItem value="medium">Medium</MenuItem>
           <MenuItem value="large">Large</MenuItem>
@@ -108,7 +108,7 @@ const Car = ({ climateData, handleCarCalculation }) => {
         </FormControl>
         </div>
         <br />
-        <label htmlFor="milesPerYear">Yearly mileage </label>
+        <InputLabel htmlFor="milesPerYear">Yearly mileage </InputLabel>
         <Slider
         marks={marks}
         size="small"

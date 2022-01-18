@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from '@mui/material/Slider'
+import { InputLabel } from "@mui/material";
 
 
 
@@ -44,7 +45,7 @@ const Electricity = ({ handleElectricityCalculation, climateData }) => {
   return (
     <div id="energy-form">
       <h2 id="energy-header">Electricity</h2>
-      <p id="energy-q"> How much energy do you use per year? (in kWh)</p>
+      <InputLabel id="energy-q"> How much energy do you use per year? (in kWh)</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"
