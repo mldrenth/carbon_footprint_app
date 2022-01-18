@@ -2,9 +2,20 @@ export const calculateElectricityValue = (electricityUsage) =>
   (electricityUsage / 1000) * 0.309;
 
 export const calculateCarValue = (carType, carMileage, carNumber) =>
-  ((carType / 1000) * carMileage) * carNumber;
+  (carType / 1000) * carMileage * carNumber;
 
-export const calculateDietValue = (meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2) => (meatServings * averageMeatCo2 + vegServings * averageVegCo2 + dairyServings * averageDairyCo2) / 1000;
+export const calculateDietValue = (
+  meatServings,
+  vegServings,
+  dairyServings,
+  averageMeatCo2,
+  averageVegCo2,
+  averageDairyCo2
+) =>
+  (meatServings * averageMeatCo2 +
+    vegServings * averageVegCo2 +
+    dairyServings * averageDairyCo2) /
+  1000;
 
 export const calculateFlightValue = (
   numDomestic,

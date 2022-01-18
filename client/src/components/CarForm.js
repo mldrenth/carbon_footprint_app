@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 const CarForm = ({ climateData, handleCarCalculation }) => {
   const [co2PerMile, setCo2PerMile] = useState(0.295);
   const [yearlyMileage, setYearlyMileage] = useState(7800);
@@ -30,7 +29,9 @@ const CarForm = ({ climateData, handleCarCalculation }) => {
 
   const onNumSelected = (evt) => {
     setCarNumber(evt.target.value);
-    {console.log(carNumber)}
+    {
+      console.log(carNumber);
+    }
   };
 
   return (
@@ -44,7 +45,7 @@ const CarForm = ({ climateData, handleCarCalculation }) => {
         value={carNumber}
         onChange={onNumSelected}
       />
-      <br/>
+      <br />
       <label htmlFor="fuel-type">Fuel type </label>
       <select id="fuel-type" onChange={onFuelSelected}>
         <option value="petrol">Petrol (standard)</option>
@@ -60,7 +61,7 @@ const CarForm = ({ climateData, handleCarCalculation }) => {
       <br />
       <label htmlFor="milesPerYear">Yearly mileage </label>
       <input
-      step={100}
+        step={100}
         id="milesPerYear"
         type="number"
         value={yearlyMileage}

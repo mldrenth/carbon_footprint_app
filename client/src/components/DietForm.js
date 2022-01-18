@@ -10,7 +10,14 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
   const [averageVegCo2, setAverageVegCo2] = useState(0);
 
   useEffect(() => {
-    handleDietCalculation(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
+    handleDietCalculation(
+      meatServings,
+      vegServings,
+      dairyServings,
+      averageMeatCo2,
+      averageVegCo2,
+      averageDairyCo2
+    );
   }, [meatServings, vegServings, dairyServings]);
 
   const onMeatSelected = (event) => {
@@ -24,7 +31,6 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
   const onVegSelected = (event) => {
     setVegServings(event.target.value);
     setAverageVegCo2(climateData[1].diet["averageVeg"]);
-  
   };
 
   const dietPick = [

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Slider from '@mui/material/Slider'
-
-
+import Slider from "@mui/material/Slider";
 
 const Electricity = ({ handleElectricityCalculation, climateData }) => {
   const [energyUsage, setEnergyUsage] = useState(4500);
@@ -14,31 +12,27 @@ const Electricity = ({ handleElectricityCalculation, climateData }) => {
     return eve.target.value > 0 ? setEnergyUsage(eve.target.value) : null;
   };
 
-
-
-  
-
   const marks = [
     {
       value: 0,
-      label: '0',
+      label: "0",
     },
     {
       value: 3000,
-      label: '3000'
+      label: "3000",
     },
     {
       value: 4500,
-      label: '4500',
+      label: "4500",
     },
     {
       value: 7000,
-      label: '7000',
+      label: "7000",
     },
     {
       value: 10000,
-      label: '10000'
-    }
+      label: "10000",
+    },
   ];
 
   return (
