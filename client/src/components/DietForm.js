@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
 
-const DietForm = ({ climateData, handleDietCalculation }) => {
-  const [dietType, setDietType] = useState("vegan");
-  const [selectedDiet, setSelectedDiet] = useState(1056);
-
-  useEffect(() => {
-    handleDietCalculation(selectedDiet);
-  }, [dietType, selectedDiet]);
+const DietForm = ({ climateData, handleDietCalculation, dietType, selectedDiet, handleDietSelected }) => {
+  
 
   const onDietSelected = (event) => {
-    setDietType(event.target.value);
-    setSelectedDiet(climateData[1].diet[event.target.value]);
+    handleDietSelected(event)
   };
 
   return (

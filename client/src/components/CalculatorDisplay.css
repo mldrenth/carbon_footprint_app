@@ -24,3 +24,12 @@
     
 }
 
+#span-more {
+    color: #8C504A;
+    font-style: bold;
+}
+
+#span-less {
+    color: #6B9080;
+    font-style: bold;
+}
