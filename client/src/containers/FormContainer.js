@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Car from "../components/Car";
+import CarForm from "../components/CarForm";
 import Electricity from "../components/Electricity";
 import DietForm from "../components/DietForm";
 import FlightForm from "../components/FlightForm";
@@ -17,8 +17,12 @@ const FormContainer = ({
   const [energyUsage, setEnergyUsage] = useState(4500);
 
   // Diet State
-  const [dietType, setDietType] = useState("vegan");
-  const [selectedDiet, setSelectedDiet] = useState(1056);
+  const [meatServings, setMeatServings] = useState(0);
+  const [dairyServings, setDairyServings] = useState(0);
+  const [vegServings, setVegServings] = useState(0);
+  const [averageMeatCo2, setAverageMeatCo2] = useState(0);
+  const [averageDairyCo2, setAverageDairyCo2] = useState(0);
+  const [averageVegCo2, setAverageVegCo2] = useState(0);
 
   // Car State
   const [currentTab, setCurrentTab] = useState('Electricity')
@@ -53,12 +57,23 @@ const FormContainer = ({
 
   //Diet Handlers
   useEffect(() => {
-    handleDietCalculation(selectedDiet);
-  }, [dietType, selectedDiet]);
+    handleDietCalculation(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
+  }, [meatServings, vegServings, dairyServings]);
 
-  const handleDietSelected = (event) => {
-    setDietType(event.target.value);
-    setSelectedDiet(climateData[1].diet[event.target.value]);
+  const handleMeatSelected = (event) => {
+    setMeatServings(event.target.value);
+    setAverageMeatCo2(climateData[1].diet["averageMeat"]);
+  };
+
+  const handleDairySelected = (event) => {
+    setDairyServings(event.target.value);
+    setAverageDairyCo2(climateData[1].diet["averageDairy"]);
+  };
+
+  const handleVegSelected = (event) => {
+    setVegServings(event.target.value);
+    setAverageVegCo2(climateData[1].diet["averageVeg"]);
+  
   };
 
   // Car Handlers
@@ -148,13 +163,19 @@ const FormContainer = ({
           <DietForm
             climateData={climateData}
             handleDietCalculation={handleDietCalculation}
-            dietType={dietType}
-            selectedDiet={selectedDiet}
-            handleDietSelected={handleDietSelected}
+            meatServings={meatServings}
+            dairyServings={dairyServings}
+            vegServings={vegServings}
+            averageMeatCo2={averageMeatCo2}
+            averageDairyCo2={averageDairyCo2}
+            averageVegCo2={averageVegCo2}
+            handleMeatSelected={handleMeatSelected}
+            handleDairySelected={handleDairySelected}
+            handleVegSelected={handleVegSelected}
           />
           : currentTab === 'Transport' ?
             <div id="transport-div">
-              <Car
+              <CarForm
                 handleCarCalculation={handleCarCalculation}
                 climateData={climateData}
                 co2PerMile={co2PerMile}
