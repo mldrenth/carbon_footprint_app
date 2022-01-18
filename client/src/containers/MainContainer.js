@@ -39,13 +39,41 @@ const MainContainer = () => {
     setCarValue(newCarValue);
   };
 
-  const handleDietCalculation = (meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2) => {
-    const newDietValue = calculateDietValue(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
+  const handleDietCalculation = (
+    meatServings,
+    vegServings,
+    dairyServings,
+    averageMeatCo2,
+    averageVegCo2,
+    averageDairyCo2
+  ) => {
+    const newDietValue = calculateDietValue(
+      meatServings,
+      vegServings,
+      dairyServings,
+      averageMeatCo2,
+      averageVegCo2,
+      averageDairyCo2
+    );
     setDietValue(newDietValue);
   };
 
-  const handleFlightCalculation = (numDomestic, numShortHaul, numLongHaul, co2Domestic, co2ShortHaul, co2LongHaul) => {
-    const newFlyingValue = calculateFlightValue(numDomestic, numShortHaul, numLongHaul, co2Domestic, co2ShortHaul, co2LongHaul);
+  const handleFlightCalculation = (
+    numDomestic,
+    numShortHaul,
+    numLongHaul,
+    co2Domestic,
+    co2ShortHaul,
+    co2LongHaul
+  ) => {
+    const newFlyingValue = calculateFlightValue(
+      numDomestic,
+      numShortHaul,
+      numLongHaul,
+      co2Domestic,
+      co2ShortHaul,
+      co2LongHaul
+    );
     setFlyingValue(newFlyingValue);
   };
 
