@@ -7,9 +7,9 @@
 }
 
 /* ---Energy info--- */
-#energy-form {
+/* #energy-form {
   padding: 5px;
-}
+} */
 
 #energy-header {
   color: #6b9080;
@@ -25,9 +25,9 @@
 
 /* ---Diet info--- */
 
-#diet-form {
+/* #diet-form {
   padding: 5px;
-}
+} */
 
 #diet-header {
   color: #6b9080;
@@ -46,9 +46,9 @@
 
 /* ---Transport info--- */
 
-#car-form {
+/* #car-form {
   padding: 5px;
-}
+} */
 
 #car-header {
   color: #6b9080;
@@ -91,4 +91,9 @@
 }
 
 #shortHaul {
+}
+
+
+form, h2 {
+  padding-left: 5px;
 }
