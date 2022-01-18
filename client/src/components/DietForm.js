@@ -5,25 +5,26 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
   const [meatServings, setMeatServings] = useState(0);
   const [dairyServings, setDairyServings] = useState(0);
   const [vegServings, setVegServings] = useState(0);
-
-
-  
+  const [averageMeatCo2, setAverageMeatCo2] = useState(0);
+  const [averageDairyCo2, setAverageDairyCo2] = useState(0);
+  const [averageVegCo2, setAverageVegCo2] = useState(0);
 
   useEffect(() => {
-    handleDietCalculation(meatServings, vegServings, dairyServings);
+    handleDietCalculation(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
   }, [meatServings, vegServings, dairyServings]);
 
   const onMeatSelected = (event) => {
     setMeatServings(event.target.value);
-    averageMeatCo2(climateData[1].diet[event.target.value]);
+    setAverageMeatCo2(climateData[1].diet["averageMeat"]);
   };
   const onDairySelected = (event) => {
     setDairyServings(event.target.value);
-    averageDairyCo2(climateData[1].diet[event.target.value]);
+    setAverageDairyCo2(climateData[1].diet["averageDairy"]);
   };
   const onVegSelected = (event) => {
     setVegServings(event.target.value);
-    averageVegCo2(climateData[1].diet[event.target.value]);
+    setAverageVegCo2(climateData[1].diet["averageVeg"]);
+  
   };
 
   const dietPick = [
@@ -70,7 +71,7 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         valueLabelDisplay="auto"
         marks={dietPick}
         id="meat-servings"
-        onChange={onDietSelected}
+        onChange={onMeatSelected}
         type="range"
         color="success"
         min={0}
@@ -78,14 +79,14 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         step={1}
         defaultValue={0}
       ></Slider>
-      <br/> 
+      <br />
       <p>Servings per week of dairy</p>
       <Slider
         size="small"
         valueLabelDisplay="auto"
         marks={dietPick}
         id="dairy servings"
-        onChange={onDietSelected}
+        onChange={onDairySelected}
         type="range"
         color="success"
         min={0}
@@ -93,14 +94,14 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
         step={1}
         defaultValue={0}
       ></Slider>
-      <br/> 
+      <br />
       <p>Servings per week of fruit, vegetables</p>
       <Slider
         size="small"
         valueLabelDisplay="auto"
         marks={dietPick}
         id="dairy servings"
-        onChange={onDietSelected}
+        onChange={onVegSelected}
         type="range"
         color="success"
         min={0}

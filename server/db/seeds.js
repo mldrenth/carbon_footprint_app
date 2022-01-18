@@ -25,11 +25,9 @@ db.climateData.insertMany(
         },
         {
             diet: { //KgCO2ePerYear
-                vegan: 1056,
-                vegetarian: 1392,
-                lowMeat: 1706,
-                mediumMeat: 2056,
-                highMeat: 2626
+                averageMeat: 2056,
+                averageDairy: 1322,
+                averageVeg: 510,
             }
         },
         {
