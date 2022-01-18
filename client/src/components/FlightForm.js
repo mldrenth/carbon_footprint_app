@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Slider, InputLabel } from "@mui/material";
 
 const FlightForm = ({ climateData, handleFlightCalculation }) => {
   const [numDomestic, setNumDomestic] = useState(0);
@@ -43,32 +44,40 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
   return (
     <form id="flight-form">
       <h4 id="flight-header">How often fo you fly?</h4>
-      <label htmlFor="domestic">Domestic: </label>
+      <InputLabel htmlFor="domestic">Domestic: </InputLabel>
 
-      <input
+      <Slider 
+        size="small"
+        color="success"
         id="domestic"
-        type="number"
+        valueLabelDisplay="auto"
         value={numDomestic}
         onChange={onDomesticChange}
         min={0}
+        max={20}
       />
       <br />
-      <label htmlFor="shortHaul">Short Haul: </label>
+      <InputLabel htmlFor="shortHaul">Short Haul: </InputLabel>
 
-      <input
-        id="shortHaul"
-        type="number"
+      <Slider 
+        size="small"
+        color="success"
+        valueLabelDisplay="auto"
         value={numShortHaul}
         min={0}
+        max={20}
         onChange={onShortChange}
       />
       <br />
-      <label htmlFor="longHaul">Long Haul: </label>
+      <InputLabel htmlFor="longHaul">Long Haul: </InputLabel>
 
-      <input
+      <Slider 
+        size="small"
+        color="success"
+        valueLabelDisplay="auto"
         id="longHaul"
         min={0}
-        type="number"
+        max={20}
         value={numLongHaul}
         onChange={onLongChange}
       />
