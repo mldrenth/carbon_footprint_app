@@ -1,4 +1,10 @@
 import Slider from "@mui/material/Slider";
+import { makeStyles } from "@mui/material/styles";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Modal from '@mui/material/Modal';
+import { InputLabel } from "@mui/material";
 
 const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected, handleDairySelected, handleVegSelected }) => {
  
@@ -37,7 +43,8 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
   return (
     <form id="diet-form">
       <h2 id="diet-header">Diet</h2>
-      <p>Daily serving meat, fish</p>
+      
+      <InputLabel id="diet-meat"> Your daily serving of meat & fish</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"
@@ -52,7 +59,7 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
         defaultValue={meatServings}
       ></Slider>
       <br />
-      <p>Daily serving dairy</p>
+      <InputLabel id="diet-dairy"> Your daily serving of dairy</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"
@@ -67,7 +74,7 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
         defaultValue={dairyServings}
       ></Slider>
       <br />
-      <p>SDaily serving fruit, vegetables</p>
+      <InputLabel id="diet-veg"> Your daily serving of vegetables</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"

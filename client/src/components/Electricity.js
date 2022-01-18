@@ -41,7 +41,7 @@ const Electricity = ({ handleElectricityCalculation, climateData, energyUsage, h
   return (
     <div id="energy-form">
       <h2 id="energy-header">Electricity</h2>
-      <InputLabel id="energy-q"> How much energy do you use per year? (in kWh)</InputLabel>
+      <InputLabel id="energy-q"> Your electric use per year? (in kWh)</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"

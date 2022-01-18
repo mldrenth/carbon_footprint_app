@@ -31,10 +31,10 @@ const CalculatorDisplay = ({
   return (
     <div id="calculator-display-container">
       
-      <h2> You are producing {totalValue.toFixed(3) < 6.125 ? <span id="total-value-low">{totalValue.toFixed(3)}</span> : totalValue.toFixed(3) < 8.000 ? <span id="total-value-average">{totalValue.toFixed(3)}</span> : <span id="total-value-high">{totalValue.toFixed(3)}</span>} tonnes of CO2 per year. </h2><br />
-      <p>Compared to the average American you are producing {totalValue >= averageAmerican ? <span id="span-more">{americanComparison}% more</span> : <span id="span-less">{americanComparison}% less</span>} CO2 per year. </p><br/>
-      <p>Compared to the average Indian you are producing {totalValue >= averageIndian ? <span id="span-more">{indianComparison}% more</span> : <span id="span-less">{indianComparison}% less</span>} CO2 per year. </p><br/>
-      <p>Compared to the average Italian you are producing {totalValue >= averageItalian ? <span id="span-more">{italianComparison}% more</span> : <span id="span-less">{italianComparison}% less</span>} CO2 per year. </p><br/>
+      <h2> You produce {totalValue.toFixed(3) < 6.125 ? <span id="total-value-low">{totalValue.toFixed(3)}</span> : totalValue.toFixed(3) < 8.000 ? <span id="total-value-average">{totalValue.toFixed(3)}</span> : <span id="total-value-high">{totalValue.toFixed(3)}</span>} tonnes of CO2 per year. </h2><br />
+      <p>Compared to the average American you create {totalValue >= averageAmerican ? <span id="span-more">{americanComparison}% more</span> : <span id="span-less">{americanComparison}% less</span>} CO2. </p><br/>
+      <p>Compared to the average Indian you create {totalValue >= averageIndian ? <span id="span-more">{indianComparison}% more</span> : <span id="span-less">{indianComparison}% less</span>} CO2. </p><br/>
+      <p>Compared to the average Italian you create {totalValue >= averageItalian ? <span id="span-more">{italianComparison}% more</span> : <span id="span-less">{italianComparison}% less</span>} CO2. </p><br/>
       
       <FootprintChart
         electricityValue={electricityValue}

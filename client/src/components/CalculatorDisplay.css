@@ -1,35 +1,44 @@
 #calculator-display-container > h2 {
-    color: #6B9080;
+  color: #6b9080;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #calculator-display-container > p {
- display: inline;
+  display: inline;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
 }
 
 #total-value-low {
-    color: #6B9080;
-    font-style: bold;
-    
+  color: #6b9080;
+  font-style: bold;
 }
 
 #total-value-average {
-    color: #8B7849;
-    font-style: bold;
-    
+  color: #8b7849;
+  font-style: bold;
 }
 
 #total-value-high {
-    color: #8C504A;
-    font-style: bold;
-    
+  color: #8c504a;
+  font-style: bold;
 }
 
 #span-more {
-    color: #8C504A;
-    font-style: bold;
+  color: #8c504a;
+  font-style: bold;
 }
 
 #span-less {
-    color: #6B9080;
-    font-style: bold;
+  color: #6b9080;
+  font-style: bold;
+}
+
+#calculator-display-container {
+  border: 1px solid #6b9080;
+  border-radius: 3px;
 }

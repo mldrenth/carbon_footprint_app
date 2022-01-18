@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("")
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,24 +10,26 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f6fff8;
-  background-image: url("https://wallpapercave.com/wp/wp4028562.jpg");
+  
 }
 
 .container {
-  max-width: 80%;
-  margin: 20px auto;
-  overflow: auto;
+  max-width: 90%;
+  margin: 15px auto;
+  overflow:auto;
   min-height: 300px;
   border: 1px solid #6b9080;
-  padding: 30px;
+  padding: 15px;
   border-radius: 5px;
   background-color: #eaf4f4;
-  box-shadow: 0px 8px 24px;
+  box-shadow: 0px 0px 2px;
 }
 
 .header {
   text-align: center;
   margin-bottom: 20px;
   color: #6b9080;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  font-size: x-large;
+
+  
 }
