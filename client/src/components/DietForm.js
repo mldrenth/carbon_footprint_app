@@ -2,16 +2,28 @@ import { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 
 const DietForm = ({ climateData, handleDietCalculation }) => {
-  const [dietType, setDietType] = useState("vegan");
-  const [selectedDiet, setSelectedDiet] = useState(1056);
+  const [meatServings, setMeatServings] = useState(0);
+  const [dairyServings, setDairyServings] = useState(0);
+  const [vegServings, setVegServings] = useState(0);
+
+
+  
 
   useEffect(() => {
-    handleDietCalculation(selectedDiet);
-  }, [dietType, selectedDiet]);
+    handleDietCalculation(meatServings, vegServings, dairyServings);
+  }, [meatServings, vegServings, dairyServings]);
 
-  const onDietSelected = (event) => {
-    setDietType(event.target.value);
-    setSelectedDiet(climateData[1].diet[event.target.value]);
+  const onMeatSelected = (event) => {
+    setMeatServings(event.target.value);
+    averageMeatCo2(climateData[1].diet[event.target.value]);
+  };
+  const onDairySelected = (event) => {
+    setDairyServings(event.target.value);
+    averageDairyCo2(climateData[1].diet[event.target.value]);
+  };
+  const onVegSelected = (event) => {
+    setVegServings(event.target.value);
+    averageVegCo2(climateData[1].diet[event.target.value]);
   };
 
   const dietPick = [
@@ -50,14 +62,44 @@ const DietForm = ({ climateData, handleDietCalculation }) => {
   ];
 
   return (
-    <form id="diet-form" onChange={onDietSelected}>
+    <form id="diet-form">
       <h2 id="diet-header">Diet</h2>
-      <p>Servings per week of meat</p>
+      <p>Servings per week of meat, fish, eggs</p>
       <Slider
         size="small"
         valueLabelDisplay="auto"
         marks={dietPick}
-        id="energy-input"
+        id="meat-servings"
+        onChange={onDietSelected}
+        type="range"
+        color="success"
+        min={0}
+        max={14}
+        step={1}
+        defaultValue={0}
+      ></Slider>
+      <br/> 
+      <p>Servings per week of dairy</p>
+      <Slider
+        size="small"
+        valueLabelDisplay="auto"
+        marks={dietPick}
+        id="dairy servings"
+        onChange={onDietSelected}
+        type="range"
+        color="success"
+        min={0}
+        max={14}
+        step={1}
+        defaultValue={0}
+      ></Slider>
+      <br/> 
+      <p>Servings per week of fruit, vegetables</p>
+      <Slider
+        size="small"
+        valueLabelDisplay="auto"
+        marks={dietPick}
+        id="dairy servings"
         onChange={onDietSelected}
         type="range"
         color="success"
