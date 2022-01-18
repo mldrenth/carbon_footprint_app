@@ -4,15 +4,11 @@ import { InputLabel } from "@mui/material";
 
 
 
-const Electricity = ({ handleElectricityCalculation, climateData }) => {
-  const [energyUsage, setEnergyUsage] = useState(4500);
-
-  useEffect(() => {
-    handleElectricityCalculation(energyUsage);
-  }, [energyUsage]);
+const Electricity = ({ handleElectricityCalculation, climateData, energyUsage, handleElectricityChange }) => {
+  
 
   const onChange = (eve) => {
-    return eve.target.value > 0 ? setEnergyUsage(eve.target.value) : null;
+    handleElectricityChange(eve)
   };
 
 
@@ -57,7 +53,7 @@ const Electricity = ({ handleElectricityCalculation, climateData }) => {
         min={0}
         max={10000}
         step={500}
-        defaultValue={4500}
+        defaultValue={energyUsage}
       ></Slider>
     </div>
   );

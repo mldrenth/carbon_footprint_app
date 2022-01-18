@@ -1,45 +1,19 @@
 import { useEffect, useState } from "react";
 import { Slider, InputLabel } from "@mui/material";
 
-const FlightForm = ({ climateData, handleFlightCalculation }) => {
-  const [numDomestic, setNumDomestic] = useState(0);
-  const [numShortHaul, setNumShortHaul] = useState(0);
-  const [numLongHaul, setNumLongHaul] = useState(0);
-  const [co2Domestic, setCo2Domestic] = useState(0);
-  const [co2ShortHaul, setCo2ShortHaul] = useState(0);
-  const [co2LongHaul, setCo2LongHaul] = useState(0);
-
-  useEffect(() => {
-    handleFlightCalculation(
-      numDomestic,
-      numShortHaul,
-      numLongHaul,
-      co2Domestic,
-      co2ShortHaul,
-      co2LongHaul
-    );
-  }, [
-    co2Domestic,
-    co2ShortHaul,
-    co2LongHaul,
-    numDomestic,
-    numShortHaul,
-    numLongHaul,
-  ]);
+const FlightForm = ({ climateData, handleFlightCalculation, numDomestic, numShortHaul, numLongHaul, handleDomesticChange, handleShortChange, handleLongChange }) => {
+  
 
   const onDomesticChange = (event) => {
-    setNumDomestic(event.target.value);
-    setCo2Domestic(climateData[4].flights["domestic"]);
+    handleDomesticChange(event)
   };
 
   const onShortChange = (event) => {
-    setNumShortHaul(event.target.value);
-    setCo2ShortHaul(climateData[4].flights["shortHaul"]);
+    handleShortChange(event)
   };
 
   const onLongChange = (event) => {
-    setNumLongHaul(event.target.value);
-    setCo2LongHaul(climateData[4].flights["longHaul"]);
+    handleLongChange(event)
   };
 
   const marks = [
@@ -59,7 +33,7 @@ const FlightForm = ({ climateData, handleFlightCalculation }) => {
 
   return (
     <form id="flight-form">
-      <h4 id="flight-header">How often fo you fly? (includes return)</h4>
+      <h4 id="flight-header">How often do you fly? (includes return)</h4>
       <InputLabel htmlFor="domestic">Domestic: </InputLabel>
 
       <Slider 

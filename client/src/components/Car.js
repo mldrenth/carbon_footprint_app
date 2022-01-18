@@ -6,51 +6,26 @@ import Select from '@mui/material/Select';
 import Slider from '@mui/material/Slider';
 import { Menu } from "@mui/material";
 
-const Car = ({ climateData, handleCarCalculation }) => {
-  const [co2PerMile, setCo2PerMile] = useState(0);
-  const [yearlyMileage, setYearlyMileage] = useState(0);
-  const [fuelType, setFuelType] = useState(null);
-  const [carSize, setCarSize] = useState(null);
-  // const [carNumber, setCarNumber] = useState(0);
-  const [hasCar, setHasCar] = useState(false);
-
-  useEffect(() => {
-    handleCarCalculation(co2PerMile, yearlyMileage);
-  }, [co2PerMile, yearlyMileage, hasCar]);
+const Car = ({ climateData, handleCarCalculation, co2PerMile, yearlyMileage, fuelType, carSize, hasCar, handleMileageChange, handleFuelSelected, handleSizeSelected, handleHasCarSelected }) => {
+  
 
   const onMileageChange = (evt) => {
-    setYearlyMileage(evt.target.value);
+    handleMileageChange(evt);
   };
 
   const onFuelSelected = (evt) => {
-    const selectedFuel = evt.target.value;
-    setFuelType(evt.target.value);
-    setCo2PerMile(climateData[0].drivingKgCO2ePerMile[selectedFuel][carSize]);
+    handleFuelSelected(evt)
   };
 
   const onSizeSelected = (evt) => {
-    const selectedSize = evt.target.value;
-    setCarSize(evt.target.value);
-    setCo2PerMile(climateData[0].drivingKgCO2ePerMile[fuelType][selectedSize]);
+    handleSizeSelected(evt)
   };
 
   const onHasCarSelected = (evt) => {
-    setHasCar(evt.target.value)
-    if (evt.target.value) {
-      setYearlyMileage(7800)
-      setFuelType('petrol')
-      setCarSize('medium')
-      setCo2PerMile(0.29)
-    }
-    else {
-      setYearlyMileage(0)
-    }
+    handleHasCarSelected(evt)
   }
 
-  // const onNumSelected = (evt) => {
-  //   setCarNumber(evt.target.value);
-  //   { console.log(carNumber) }
-  // };
+  
 
   const marks = [
     {
