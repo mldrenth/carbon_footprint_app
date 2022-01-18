@@ -10,7 +10,7 @@ const CalculatorDisplay = ({
 }) => {
   const averageAmerican = 15.2;
   const averageIndian = 1.8;
-  const averagePolish = 8.2;
+  const averageItalian = 5.4;
 
   const compareAverage = (total, average) => {
     let percentage = 0;
@@ -26,16 +26,16 @@ const CalculatorDisplay = ({
 
   const americanComparison = compareAverage(totalValue, averageAmerican);
   const indianComparison = compareAverage(totalValue, averageIndian);
-  const polishComparison = compareAverage(totalValue, averagePolish)
+  const italianComparison = compareAverage(totalValue, averageItalian)
 
   return (
     <div id="calculator-display-container">
-      <h2>Your Score:</h2>
-      <p> You are producing {totalValue.toFixed(3) < 6.125 ? <span id="total-value-low">{totalValue.toFixed(3)}</span> : totalValue.toFixed(3) < 8.000 ? <span id="total-value-average">{totalValue.toFixed(3)}</span> : <span id="total-value-high">{totalValue.toFixed(3)}</span>} tonnes of CO2 per year. </p><br />
-      <p>Compared to the average American person you are producing {totalValue >= averageAmerican ? <span id="span-more">{americanComparison}% more</span> : <span id="span-less">{americanComparison}% less</span>} CO2 per year. </p><br/>
-      <p>Compared to the average Indian person you are producing {totalValue >= averageIndian ? <span id="span-more">{indianComparison}% more</span> : <span id="span-less">{indianComparison}% less</span>} CO2 per year. </p><br/>
-      <p>Compared to the average Polish person you are producing {totalValue >= averagePolish ? <span id="span-more">{polishComparison}% more</span> : <span id="span-less">{polishComparison}% less</span>} CO2 per year. </p><br/>
-      <h2>Your Score is calculated out of the following:</h2>
+      
+      <h2> You are producing {totalValue.toFixed(3) < 6.125 ? <span id="total-value-low">{totalValue.toFixed(3)}</span> : totalValue.toFixed(3) < 8.000 ? <span id="total-value-average">{totalValue.toFixed(3)}</span> : <span id="total-value-high">{totalValue.toFixed(3)}</span>} tonnes of CO2 per year. </h2><br />
+      <p>Compared to the average American you are producing {totalValue >= averageAmerican ? <span id="span-more">{americanComparison}% more</span> : <span id="span-less">{americanComparison}% less</span>} CO2 per year. </p><br/>
+      <p>Compared to the average Indian you are producing {totalValue >= averageIndian ? <span id="span-more">{indianComparison}% more</span> : <span id="span-less">{indianComparison}% less</span>} CO2 per year. </p><br/>
+      <p>Compared to the average Italian you are producing {totalValue >= averageItalian ? <span id="span-more">{italianComparison}% more</span> : <span id="span-less">{italianComparison}% less</span>} CO2 per year. </p><br/>
+      
       <FootprintChart
         electricityValue={electricityValue}
         carValue={carValue}
