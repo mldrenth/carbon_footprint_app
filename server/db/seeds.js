@@ -24,10 +24,10 @@ db.climateData.insertMany(
             }
         },
         {
-            diet: { //KgCO2ePerYear
-                averageMeat: 2056,
-                averageDairy: 1322,
-                averageVeg: 510,
+            diet: { //KgPerServing
+                averageMeat: 565,
+                averageDairy: 334,
+                averageVeg: 147,
             }
         },
         {
