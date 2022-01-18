@@ -1,24 +1,25 @@
 import Slider from "@mui/material/Slider";
-import { makeStyles } from "@mui/material/styles";
-import Popover from "@mui/material/Popover";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Modal from '@mui/material/Modal';
 import { InputLabel } from "@mui/material";
 
-const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected, handleDairySelected, handleVegSelected }) => {
- 
-
+const DietForm = ({
+  meatServings,
+  dairyServings,
+  vegServings,
+  handleMeatSelected,
+  handleDairySelected,
+  handleVegSelected,
+}) => {
   const onMeatSelected = (event) => {
-    handleMeatSelected(event)
-    {console.log(meatServings)}
+    handleMeatSelected(event);
+    {
+      console.log(meatServings);
+    }
   };
   const onDairySelected = (event) => {
-    handleDairySelected(event)
+    handleDairySelected(event);
   };
   const onVegSelected = (event) => {
-    handleVegSelected(event)
-  
+    handleVegSelected(event);
   };
 
   const dietPick = [
@@ -43,8 +44,10 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
   return (
     <form id="diet-form">
       <h2 id="diet-header">Diet</h2>
-      
+      <popover />
+
       <InputLabel id="diet-meat"> Your daily serving of meat & fish</InputLabel>
+
       <Slider
         size="small"
         valueLabelDisplay="auto"
@@ -55,7 +58,7 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
         color="success"
         min={0}
         max={3}
-        step={.25}
+        step={0.25}
         defaultValue={meatServings}
       ></Slider>
       <br />
@@ -70,7 +73,7 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
         color="success"
         min={0}
         max={3}
-        step={.25}
+        step={0.25}
         defaultValue={dairyServings}
       ></Slider>
       <br />
@@ -85,7 +88,7 @@ const DietForm = ({ meatServings, dairyServings, vegServings, handleMeatSelected
         color="success"
         min={0}
         max={3}
-        step={.25}
+        step={0.25}
         defaultValue={vegServings}
       ></Slider>
     </form>
