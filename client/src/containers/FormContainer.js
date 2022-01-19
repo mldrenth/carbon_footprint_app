@@ -4,7 +4,7 @@ import Electricity from "../components/Electricity";
 import DietForm from "../components/DietForm";
 import FlightForm from "../components/FlightForm";
 import "./FormContainer.css";
-import { Tabs, Tab } from '@mui/material'
+import { Tabs, Tab, Box } from '@mui/material'
 
 const FormContainer = ({
   handleCarCalculation,
@@ -147,11 +147,13 @@ const FormContainer = ({
   return (
 
     <div id="forms-container">
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
       <Tabs onChange={handleChange} value={currentTab}>
         <Tab label="Electricity" value="electricity"></Tab>
         <Tab label="Diet" value="diet"></Tab>
         <Tab label="Transport" value="transport"></Tab>
       </Tabs>
+      </Box >
       {currentTab === 'Electricity' ?
         <Electricity
           handleElectricityCalculation={handleElectricityCalculation}
@@ -183,10 +185,6 @@ const FormContainer = ({
                 fuelType={fuelType}
                 carSize={carSize}
                 hasCar={hasCar}
-                // setCo2PerMile={setCo2PerMile}
-                // setYearlyMileage={setYearlyMileage}
-                // setFuelType={setFuelType}
-                // setCarSize={setCarSize}
                 handleMileageChange={handleMileageChange}
                 handleFuelSelected={handleFuelSelected}
                 handleSizeSelected={handleSizeSelected}
