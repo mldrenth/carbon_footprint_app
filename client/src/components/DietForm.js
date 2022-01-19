@@ -1,57 +1,39 @@
-import { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
+import { InputLabel } from "@mui/material";
 
-const DietForm = ({ climateData, handleDietCalculation, meatServings, dairyServings, vegServings, averageMeatCo2, averageDairyCo2, averageVegCo2, handleMeatSelected, handleDairySelected, handleVegSelected }) => {
-  // const [meatServings, setMeatServings] = useState(0);
-  // const [dairyServings, setDairyServings] = useState(0);
-  // const [vegServings, setVegServings] = useState(0);
-  // const [averageMeatCo2, setAverageMeatCo2] = useState(0);
-  // const [averageDairyCo2, setAverageDairyCo2] = useState(0);
-  // const [averageVegCo2, setAverageVegCo2] = useState(0);
-
-  // useEffect(() => {
-  //   handleDietCalculation(meatServings, vegServings, dairyServings, averageMeatCo2, averageVegCo2, averageDairyCo2);
-  // }, [meatServings, vegServings, dairyServings]);
-
+const DietForm = ({
+  meatServings,
+  dairyServings,
+  vegServings,
+  handleMeatSelected,
+  handleDairySelected,
+  handleVegSelected,
+}) => {
   const onMeatSelected = (event) => {
-    handleMeatSelected(event)
+    handleMeatSelected(event);
+    {
+      console.log(meatServings);
+    }
   };
   const onDairySelected = (event) => {
-    handleDairySelected(event)
+    handleDairySelected(event);
   };
   const onVegSelected = (event) => {
-    handleVegSelected(event)
-  
+    handleVegSelected(event);
   };
 
   const dietPick = [
     {
-      value: 14,
-      label: "14",
-    },
-    {
-      value: 12,
-      label: "12",
-    },
-    {
-      value: 10,
-      label: "10",
-    },
-    {
-      value: 8,
-      label: "8",
-    },
-    {
-      value: 6,
-      label: "6",
-    },
-    {
-      value: 4,
-      label: "4",
+      value: 3,
+      label: "3",
     },
     {
       value: 2,
       label: "2",
+    },
+    {
+      value: 1,
+      label: "1 (average)",
     },
     {
       value: 0,
@@ -62,7 +44,10 @@ const DietForm = ({ climateData, handleDietCalculation, meatServings, dairyServi
   return (
     <form id="diet-form">
       <h2 id="diet-header">Diet</h2>
-      <p>Servings per week of meat, fish, eggs</p>
+      <popover />
+
+      <InputLabel id="diet-meat"> Your daily serving of meat & fish</InputLabel>
+
       <Slider
         size="small"
         valueLabelDisplay="auto"
@@ -72,12 +57,12 @@ const DietForm = ({ climateData, handleDietCalculation, meatServings, dairyServi
         type="range"
         color="success"
         min={0}
-        max={14}
-        step={1}
+        max={3}
+        step={0.25}
         defaultValue={meatServings}
       ></Slider>
       <br />
-      <p>Servings per week of dairy</p>
+      <InputLabel id="diet-dairy"> Your daily serving of dairy</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"
@@ -87,12 +72,12 @@ const DietForm = ({ climateData, handleDietCalculation, meatServings, dairyServi
         type="range"
         color="success"
         min={0}
-        max={14}
-        step={1}
+        max={3}
+        step={0.25}
         defaultValue={dairyServings}
       ></Slider>
       <br />
-      <p>Servings per week of fruit, vegetables</p>
+      <InputLabel id="diet-veg"> Your daily serving of vegetables</InputLabel>
       <Slider
         size="small"
         valueLabelDisplay="auto"
@@ -102,8 +87,8 @@ const DietForm = ({ climateData, handleDietCalculation, meatServings, dairyServi
         type="range"
         color="success"
         min={0}
-        max={14}
-        step={1}
+        max={3}
+        step={0.25}
         defaultValue={vegServings}
       ></Slider>
     </form>

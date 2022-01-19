@@ -2,57 +2,28 @@
 #forms-container {
   background: #f6fff8;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 20px 25px;
   text-align: left;
+  border: 1px solid #6b9080;
+  border-radius: 3px;
 }
 
 /* ---Energy info--- */
-#energy-form {
-  padding: 5px;
-}
 
 #energy-header {
   color: #6b9080;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-}
-#energy-q {
-}
-
-#energy-input {
-}
-#energy-kwh {
 }
 
 /* ---Diet info--- */
 
-#diet-form {
-  padding: 5px;
-}
-
 #diet-header {
   color: #6b9080;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-}
-#high-meat {
-}
-#medium-meat {
-}
-#low-meat {
-}
-#vegetarian {
-}
-#vegan {
 }
 
 /* ---Transport info--- */
 
-#car-form {
-  padding: 5px;
-}
-
 #car-header {
   color: #6b9080;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 #car-options {
@@ -62,33 +33,13 @@
   margin-top: 20px;
 }
 
-#car-average {
-}
-
-#fuel-type {
-}
-
-#car-size {
-}
-
-#milesPerYear {
-}
-
 /* Flights */
-
-#flight-form {
-}
 
 #flight-header {
   color: #6b9080;
 }
 
-#domestic {
-    
-}
-
-#longHaul {
-}
-
-#shortHaul {
+form,
+h2 {
+  padding-left: 5px;
 }
