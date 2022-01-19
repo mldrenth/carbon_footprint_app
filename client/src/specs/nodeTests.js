@@ -22,14 +22,27 @@ const carResults = calculateCarValue(carType, carMileage);
 assert.deepStrictEqual(carResults, 2.5);
 
 //Test DietValue calculation
+const meatServings = 1;
+const vegServings = 1;
+const dairyServings = 2;
 
-const vegan = 1056;
+const calculateDietValue = (
+  meatServings,
+  vegServings,
+  dairyServings,
+  averageMeatCo2,
+  averageVegCo2,
+  averageDairyCo2
+) =>
+  ((meatServings * averageMeatCo2) +
+    (vegServings * averageVegCo2) +
+    (dairyServings * averageDairyCo2)) * 365 / 1000
+  ;
 
-const calculateDietValue = (dietType) => dietType / 1000;
+  const dietResults = calculateDietValue(meatServings, vegServings, dairyServings,0.565, 0.147, 0.334 )
+  
+  assert.deepStrictEqual(dietResults, 0.5037)
 
-const dietResults = calculateDietValue(vegan);
-
-assert.deepStrictEqual(dietResults, 1.056);
 
 // Test calculate flight values
 
@@ -81,4 +94,4 @@ const totalResults = calculateTotalValue(
   flightResult
 );
 
-assert.deepStrictEqual(totalResults, 7.901);
+assert.deepStrictEqual(totalResults, 7.3487);
