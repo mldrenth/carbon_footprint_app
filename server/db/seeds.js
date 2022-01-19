@@ -25,9 +25,9 @@ db.climateData.insertMany(
         },
         {
             diet: { //KgPerServing
-                averageMeat: 565,
-                averageDairy: 334,
-                averageVeg: 147,
+                averageMeat: .565,
+                averageDairy: .334,
+                averageVeg: .147,
             }
         },
         {
