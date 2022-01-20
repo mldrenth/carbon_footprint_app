@@ -47,7 +47,7 @@ const Electricity = ({ energyUsage, handleElectricityChange }) => {
         min={0}
         max={10000}
         step={500}
-        defaultValue={energyUsage}
+        value={energyUsage}
       ></Slider>
     </div>
   );
