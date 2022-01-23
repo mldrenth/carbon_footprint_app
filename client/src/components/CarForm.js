@@ -57,7 +57,7 @@ const CarForm = ({
         value={hasCar}
         onChange={onHasCarSelected}
         size="small"
-        color="success"
+        color="primary"
       >
         <MenuItem value={true}>Yes</MenuItem>
         <MenuItem value={false}>No</MenuItem>
@@ -76,7 +76,7 @@ const CarForm = ({
                   id="fuel-type"
                   onChange={onFuelSelected}
                   value={fuelType}
-                  color="success"
+                  color="primary"
                   label="Fuel Type"
                 >
                   <MenuItem value="petrol">Petrol (standard)</MenuItem>
@@ -94,7 +94,7 @@ const CarForm = ({
                   id="car-size"
                   onChange={onSizeSelected}
                   value={carSize}
-                  color="success"
+                  color="primary"
                   label="Car Size"
                 >
                   <MenuItem value="small">Small</MenuItem>
@@ -110,7 +110,7 @@ const CarForm = ({
             marks={marks}
             size="small"
             valueLabelDisplay="auto"
-            color="success"
+            color="primary"
             step={500}
             min={0}
             max={30000}

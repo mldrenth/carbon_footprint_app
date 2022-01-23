@@ -152,7 +152,7 @@ const FormContainer = ({
     <div id="forms-container">
       <TabContext value={currentTab}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-      <TabList textColor='inherit' indicatorColor="primary" onChange={handleChange} value={currentTab}>
+      <TabList textColor='primary' indicatorColor="primary" onChange={handleChange} value={currentTab}>
         <Tab label="Electricity" value="electricity"></Tab>
         <Tab label="Diet" value="diet"></Tab>
         <Tab label="Transport" value="transport"></Tab>
