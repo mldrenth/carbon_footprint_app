@@ -6,7 +6,7 @@ import {
   calculateElectricityValue,
   calculateFlightValue,
   calculateTotalValue,
-} from "../Helpers/Calculator";
+} from "../helpers/Calculator";
 import FormContainer from "./FormContainer";
 import CalculatorDisplay from "../components/CalculatorDisplay";
 import "./MainContainer.css";

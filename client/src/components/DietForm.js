@@ -11,9 +11,7 @@ const DietForm = ({
 }) => {
   const onMeatSelected = (event) => {
     handleMeatSelected(event);
-    {
-      console.log(meatServings);
-    }
+    
   };
   const onDairySelected = (event) => {
     handleDairySelected(event);
@@ -55,11 +53,11 @@ const DietForm = ({
         id="meat-servings"
         onChange={onMeatSelected}
         type="range"
-        color="success"
+        color="primary"
         min={0}
         max={3}
         step={0.25}
-        defaultValue={meatServings}
+        value={meatServings}
       ></Slider>
       <br />
       <InputLabel id="diet-dairy"> Your daily serving of dairy</InputLabel>
@@ -70,11 +68,11 @@ const DietForm = ({
         id="dairy servings"
         onChange={onDairySelected}
         type="range"
-        color="success"
+        color="primary"
         min={0}
         max={3}
         step={0.25}
-        defaultValue={dairyServings}
+        value={dairyServings}
       ></Slider>
       <br />
       <InputLabel id="diet-veg"> Your daily serving of vegetables</InputLabel>
@@ -85,11 +83,11 @@ const DietForm = ({
         id="dairy servings"
         onChange={onVegSelected}
         type="range"
-        color="success"
+        color="primary"
         min={0}
         max={3}
         step={0.25}
-        defaultValue={vegServings}
+        value={vegServings}
       ></Slider>
     </form>
   );
