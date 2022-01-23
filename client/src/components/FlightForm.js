@@ -42,7 +42,7 @@ const FlightForm = ({
 
       <Slider
         size="small"
-        color="success"
+        color="primary"
         id="domestic"
         valueLabelDisplay="auto"
         value={numDomestic}
@@ -56,7 +56,7 @@ const FlightForm = ({
 
       <Slider
         size="small"
-        color="success"
+        color="primary"
         valueLabelDisplay="auto"
         value={numShortHaul}
         min={0}
@@ -69,7 +69,7 @@ const FlightForm = ({
 
       <Slider
         size="small"
-        color="success"
+        color="primary"
         valueLabelDisplay="auto"
         id="longHaul"
         min={0}

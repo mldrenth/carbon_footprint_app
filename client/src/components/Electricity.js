@@ -43,7 +43,7 @@ const Electricity = ({ energyUsage, handleElectricityChange }) => {
         id="energy-input"
         onChange={onChange}
         type="range"
-        color="success"
+        color="primary"
         min={0}
         max={10000}
         step={500}
