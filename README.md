@@ -32,5 +32,5 @@ explore react concepts so the design and implentation changed as we developed a 
 - `npm install` from inside both '/client' and '/server' for dependencies. 
 - `npm run seeds` Within the '/server' file enter to seed the DB.
 - `npm run server:dev` within '/server' to start server. 
-- `npm start` inside '/client' to start client at Localhost:8000.
+- `npm start` inside '/client' to start client at Localhost:3000.
 
