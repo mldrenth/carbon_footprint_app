@@ -1,16 +1,16 @@
 ### How we worked on this project
 ---
-The goal was to use React, Express and MongoDB to develop an app showing an interactive Co2 footprint.
+The goal was to use JavaScript, React, Express and MongoDB to develop an app showing an interactive Co2 footprint. We were initially 3 people in our team, but had to manage with only two very early on due to one of us falling ill.
 
-- We built the app based on Excalidraw designs: [Screenshots of designs](http://www.piclinks)
-- Trello was used to organise tasks throughout: [Screenshots of Trello](http://www.piclinks)
-- Git was used to manage branches and pull requests: [Screenshots of Git](http://www.piclinks)
+- We built the app based on Excalidraw designs.
+- Trello was used to organise tasks throughout.
+- Git was used to manage branches and pull requests.
 
 ### How to navigate the project
 ---
-- Heavy reliance on individual component of state: [Code Example](http://www.piclinks)
-- Testing was done with node.js unit tests and Cypress: [Code Test](http://www.piclinks)
-- Highcharts (graph) and Mui (UI) libraries were used. [Screenshot of app](http://www.piclinks)
+- Heavy reliance on individual component of state.
+- Testing was done with node.js unit tests and Cypress.
+- Highcharts (graph) and Mui (UI) libraries were used.
 
 ### Why we build the project this way
 ---
